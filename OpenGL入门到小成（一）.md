@@ -173,5 +173,11 @@ GLSL的着色器分为两个部分：顶点着色器和片段着色器。
 
 #### OpenGL坐标系转换全局图
 
-![](https://raw.githubusercontent.com/oymuzi/OpenGLDocs/master/Resources/坐标转换.png?token=AGJGEXFXWCVDAWMGGHDUDLS43L47Q)
+![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/坐标转换.png)
+
+
+
+#### OpenGL 渲染流程图
+
+![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/着色器的渲染过程.jpeg)
 
