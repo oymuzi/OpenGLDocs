@@ -4,6 +4,8 @@
 
 ### 渲染流程解析
 
+得益于OpenGL是基于C的集合，可以有很强的跨平台性，以及OpenGL规范中没有窗口层，可以在iOS上无缝对接(iOS12已废弃OpenGL ES)，可以在程序中使用OpenGL生成2D、3D图像渲染在屏幕上或者复制回内存里。
+
 从功能角度来看，调用API驱动服务端解析数据、渲染返回结果，这个过程中OpenGL的API集合充当了客户端的角色，而OpenGL底层的着色器和转换充当了服务器端的角色。
 
 从顶点着色器传递数据给 Primitive Assembly后将会把顶点数据转换成图元，并且对图元进行一些处理，正背面剔除发生在此阶段，[参考官方文档](https://www.khronos.org/opengl/wiki/Primitive_Assembly)。处理数据后传递给片元着色器进行处理着色渲染得到结果。
