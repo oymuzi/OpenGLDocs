@@ -1,6 +1,6 @@
 ### 渲染流程图
 
-![渲染流程图](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/OpenGL渲染结构.jpeg)
+![渲染流程图](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/OpenGL渲染结构.png)
 
 ### 渲染流程解析
 
