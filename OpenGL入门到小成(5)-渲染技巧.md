@@ -2,7 +2,7 @@
 
 从上个章节我们学习了渲染的基础，可以绘制一些简单的图形，比如点、线、金字塔、三角形扇形、以及三角形圆环等图形，也感受到了绘制图形后兴奋感以及刺激感。但是在更多的场景会碰到一些问题，就比如绘制甜甜圈的时候会出现如下图的情况，简直惨不忍睹。
 
-![](/Users/ios/Desktop/OpenGLDocs/Resources/绘制甜甜圈出现的问题.gif)
+![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/绘制甜甜圈出现的问题.gif)
 
 
 
@@ -18,7 +18,7 @@
 
 答案是通过分析顶点数据的连接顺序。如下图所示：
 
-![](/Users/ios/Desktop/OpenGLDocs/Resources/顶点顺序.png)
+![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/顶点顺序.png)
 
 ```
 GLfloat vertices[] = {
@@ -37,7 +37,7 @@ GLfloat vertices[] = {
 
 下图是一张在观察者位置看到三角形顶点的连接顺序，背面的三角形顶点的连接顺序将会反转，如果观察点在左边，那么左右边的三角形的顶点连接顺序也会反转，以便在绘制的时候来剔除背面。**正⾯和背⾯是由三⻆形的顶点定义顺序和观察者方向共同决定的.随着观察者的角度方向的改变,正面背面也会跟着改变**
 
-![](/Users/ios/Desktop/OpenGLDocs/Resources/观察顶点连接顺序.png)
+![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/观察顶点连接顺序.png)
 
 
 
@@ -61,7 +61,7 @@ glFrontFace(GL_CWW);
 
 我们开启正背面剔除后可以看到没有之前的那么不堪入目了，如下图所示。但是出现了一个新的问题，就是有的面没有绘制出来，这是为啥呢？那该怎么解决这个问题呢？
 
-![](/Users/ios/Desktop/OpenGLDocs/Resources/开启正背面剔除的效果.gif)
+![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/开启正背面剔除的效果.gif)
 
 
 
@@ -122,7 +122,7 @@ glDepthMask(GL_FALSE);
 
 下图展示了开启和关闭深度测试的效果：
 
-![](/Users/ios/Desktop/OpenGLDocs/Resources/开启和关闭深度测试的效果.gif)
+![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/开启和关闭深度测试的效果.gif)
 
 
 
@@ -132,7 +132,20 @@ glDepthMask(GL_FALSE);
 
 #### 解决ZFlighting方法
 
-使用**Polygon Offse**t来解决这个Z值冲突的问题。让深度值之间产生一个间隙，两个平面之间就不会交叉产生闪烁的问题，在图形深度测试前增加一点距离来让两个平面的深度值有所区分。
+```
+// 增加偏移量  
+void glPolygonOffset(GLFloat factor, GLFloat uints);
+```
+
+使用**Polygon Offse**t来解决这个Z值冲突的问题。让深度值之间产生一个间隙，两个平面之间就不会交叉产生闪烁的问题，在图形深度测试前增加一点距离来让两个平面的深度值有所区分。使用**glPolygonOffset**增加偏移量会让每个Fragment的深度值都增加如下所示的偏移量。	
+
+> ​					$Offset = m * factor + r * uints$
+>
+> m: 多边形的深度的斜率的最大值，当一个多边形越是与近裁切面平行，m就越趋于0。
+>
+> r： 能产生窗口坐标系的深度值由可分辨的差异最小值r，该值是由OpenGL指定的一个常量。
+>
+> 一个大于0的offset把物体退到远离摄像机位置的地方看起来远些；小于0的offset把物体往前拉靠近摄像机的位置看起来近些。
 
 ```
 //启⽤用Polygon Offset ⽅方式
@@ -143,10 +156,111 @@ glDepthMask(GL_FALSE);
 */
 glEnable(GL_POLYGON_OFFSET_FILL)
 
-// 设置偏移值,通常这样设置即可达到解决闪烁的问题，-1.0是让物体从观察者看起来更远点
+// 设置偏移值,通常这样设置即可达到解决闪烁的问题，-1.0是让物体从观察者看起来更近点
 glPolygonOffset(-1.0f, -1.0f); 
 
+// 关闭PolygonOffset, 和上面的模式相对应的三种
+glDisable(GL_POLYGON_OFFSET_FILL);
 ```
 
 
+
+#### 避免ZFlighting产生
+
+1. 不要两个图形靠的太近，避免渲染时三角形叠加在一起。这种方式添加一个小量的偏移值即可，手动设置偏移值是需要付出代价的。
+2. 尽可能将近裁剪面设置的离观察者远一些。在近裁剪面附近，深度值是很精确的，可以让裁剪面离观察者远一些会让整个裁剪范围的深度值更加精确，但同时也会让离观察者近的物体被裁切掉，所以需要调试好参数。
+3. 使用更高位数的深度缓冲区可以提高精度，一般是用的是24位，有的会使用32位深度缓冲区。
+
+
+
+### 裁剪区域
+
+> 在OpenGL中提高渲染性能的一种方式是只更新更改的部分，并且可以在将要显示的缓冲区中制定一个裁剪区域。原理就是在OpenGL渲染时限制渲染区域，来帧缓冲区设置一个裁剪区域，在此裁剪区域内的物体才会被绘制，超出区域的物体将会被丢弃。
+>
+> 窗口：显示界面。
+>
+> 视口：在窗口里面的区域，可以等于窗口也可以小于窗口，在视口里面的物体才能看见，超出视口的部分是看不到的。
+>
+> 裁剪区域：视口矩形区域的最小最大x坐标和y坐标，通过glOrtho()函数设置最远的Z坐标，形成一个立体裁剪区域。
+
+```
+//开启裁剪测试
+glEnable(GL_SCISSOR_TEST);
+
+// 关闭裁剪测试
+glDisable(GL_SCISSOR_TEST);
+
+// 指定裁剪区域
+void glScissor(Glint x,Glint y,GLSize width,GLSize height);
+```
+
+
+
+### 混合
+
+在OpenGL渲染开启颜色缓冲区、深度缓冲区后，颜色存储在颜色缓冲区中，深度也存储在深度缓冲区。当关闭颜色缓冲区后，新的颜色片段将会简单的覆盖之前的颜色片段；当再度开启颜色缓冲区后，新的颜色片段更接近裁剪面的颜色片段时才会替换之前的颜色片段。
+
+#### 组合颜色
+
+> 开启颜色混合后，颜色的混合计算是根据混合方程式来计算，以下就是其中一种常用的方程式：
+>
+> ​			$C_f = C_s * S + C_d * D $
+>
+> $C_f​$是混合颜色结果
+>
+> $C_s$是源颜色
+>
+> $C_d$是目标颜色
+>
+> $S$是源混合因子
+>
+> $D$是目标混合因子
+>
+> 
+> 还有如下混合方程式可供选择，使用设置方程式函数**glbBlendEquation(GLenum mode);**
+>
+> | 模式                     | 函数                          |
+> | ------------------------ | ----------------------------- |
+> | GL_FUNC_ADD              | $C_f$ = $C_s$ * S + $C_d$ * D |
+> | GL_FUNS_SUBTRACT         | $C_f$ = $C_s​$ * S - $C_d​$ * D |
+> | GL_FUNC_REVERSE_SUBTRACT | $C_f$ = $C_d$ * D - $C_s$ * S |
+> | GL_MIN                   | $C_f$ = min($C_s​$, $C_d​$)     |
+> | GL_MAX                   | $C_f$ = max($C_s$, $C_d$)     |
+
+| 函数                        | RGB混合因子                         | Alpha混合因子 |
+| --------------------------- | ----------------------------------- | ------------- |
+| GL_ZERO                     | (0, 0, 0)                           | 0             |
+| GL_ONE                      | (1, 1, 1)                           | 1             |
+| GL_SRC_COLOR                | ($R_s$, $G_s​$, $B_s​$)               | $A_s$         |
+| GL_ONE_MINUS_SRC_COLOR      | (1, 1, 1) - ($R_s$, $G_s​$, $B_s​$)   | 1 - $A_s$     |
+| GL_DST_COLOR                | ($R_d$, $G_d​$, $B_d​$)               | $A_d$         |
+| GL_ONE_MINUS_DST_COLOR      | (1, 1, 1) - ($R_d$, $G_d​$, $B_d​$)   | 1 - $A_d$     |
+| GL_SRC_ALPHA                | ($A_s$, $A_s​$, $A_s​$ )              | $A_s$         |
+| GL_ONE_MINUS_SRC_ALPHA      | (1, 1, 1) - ($A_s$, $A_s$, $A_s$ )  | 1 - $A_s$     |
+| GL_DST_ALPHA                | ($A_d$, $A_d​$, $A_d​$)               | $A_d$         |
+| GL_ONE_MINUS_DST_ALPHA      | (1, 1, 1) - ($A_d$, $A_d​$, $A_d​$)   | 1 - $A_d$     |
+| GL_CONSTANT_COLOR           | ($R_c$, $G_c$, $B_c$)               | $A_c$         |
+| GL_ONE_MINUS_CONSTANT_COLOR | (1, 1, 1) - ($R_c$, $G_c​$, $B_c​$)   | 1 - $A_c$     |
+| GL_CONSTANT_ALPHA           | ($A_c$, $A_c$, $A_c$)               | $A_c$         |
+| GL_ONE_MINUS_CONSTANT_ALPHA | (1, 1, 1) - ($A_c$, $A_c$, $A_c$)   | 1 - $A_c$     |
+| GL_SRC_ALPHA_SATURATE       | (f, f, f) * f = min($A_s$, 1-$A_d$) | 1             |
+
+表中R、G、B、A分代表红、绿、蓝、alpha。
+
+表中下标S、D分别代表源、目标。C代表常量颜色。
+
+```
+//常用的颜色混合因子是下列函数：
+glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+```
+
+ **glBlendFunc** 指定 源和目标 RGBA值的混合函数;但是**glBlendFuncSeparate**函数则允许为RGB 和 Alpha 成分单独指定混合函数。在混合因子表中带有**CONSTANT**字符的常量混合因子，默认为黑色，可以进行更改。
+
+```
+//strRGB: 源颜色的混合因子
+//dstRGB: ⽬标颜色的混合因子 
+//strAlpha: 源颜色的Alpha因子 
+//dstAlpha: ⽬标颜⾊的Alpha因⼦
+void glBlendFuncSeparate(GLenum strRGB,GLenum dstRGB ,GLenum strAlpha,GLenum dstAlpha);
+```
 
