@@ -56,3 +56,47 @@ OpenGL ES (OpenGL for Embedded Systems) 是以手持和嵌入式为目标的高�
 
 **片元着色器的主要任务：①计算颜色  ②获取纹理值  ③往像素填充颜色(颜色值/纹理值)。可以将图片/视频中的每帧的每像素中颜色进行修改，常见的有添加滤镜、美化图片等操作。**
 
+
+
+#### 逐片段操作
+
+![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/OpenGLES逐片段操作.png)
+
+
+
+### EGL(Embedded Graphics Library)
+
+**OpenGL ES**规范没有定义窗口层，托管操作系统必须提供函数来创建一个**OpenGL ES** 渲染上下文和一个帧缓冲区，写入任何绘图命令的结果 。
+
+**OpenGL ES 命令需要渲染上下文和绘制表面才能完成图形图像的绘制。但是OpenGL ES API并没有提供如何渲染上下文或者上下文如何连接到原生窗口系统，EGL是Khronos渲染API(OpenGL ES)和原生窗口的之间的接口，iOS是唯一支持OpenGL ES却不支持EGL的平台，因为Apple提供自己的EGL API实现——  EAGL。**
+
+> **渲染上下文**：存储相关OpenGL ES的状态。
+>
+> **绘制表面**：用于绘制图元的表面，指定渲染所需的缓存区类型，例如颜色缓存区、深度缓存区和模板缓冲区。
+>
+> **EGLDisplay**：因为每个窗口系统都有不同的定义，所以EGL提供基本不透明的类型：EGLDisplay，这个人类型封装了所有的系统相关性，用于和原生窗口系统接口。
+
+
+
+### 动画
+
+我们知道动画有两种：帧动画和关键帧动画；如果需要细分的话：显性动画和隐性动画。
+
+#### 动画循环
+
+
+
+### GLkit
+
+![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/OpenGLES通过GLKit渲染过程.png)
+
+> **GLKit** 框架的设计目标是为了简化基于**OpenGL / OpenGL ES** 的应⽤用开发。它的出现加快**OpenGL ES**或**OpenGL**应用程序开发。 使⽤数学库，背景纹理加载，预先创建的着色器器效果，以及标准视图和视图控制器来实现渲染循环。
+>
+> **GLKit**框架提供了功能和类，可以减少创建新的基于着⾊器的应用程序所需的工作量，或者⽀持依赖早期版本的**OpenGL ES**或**OpenGL**提供的固定函数顶点或⽚片段处理理的现有 应⽤用程序
+>
+> **GLKView**提供绘制场所，GLKViewController扩展于标准的UIKit设计模式，用于绘制视图内容的管理与呈现。 可参考[官方文档](<https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/OpenGLES_ProgrammingGuide/DrawingWithOpenGLES/DrawingWithOpenGLES.html#//apple_ref/doc/uid/TP40008793-CH503-SW1>)说明。
+
+**GLKit主要的功能是：①加载纹理 ②提供高性能的数学运算 ③提供常见的着色器 ④提供视图以及视图控制器。**
+
+
+
