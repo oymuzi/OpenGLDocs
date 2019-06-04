@@ -10,7 +10,7 @@ OpenGL ES (OpenGL for Embedded Systems) 是以手持和嵌入式为目标的高�
 
 ### 渲染流程
 
-![渲染流程图](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/OpenGL ES图形管线.png)
+![渲染流程图](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/OpenGL%20ES%E5%9B%BE%E5%BD%A2%E7%AE%A1%E7%BA%BF.png)
 
 #### 顶点着色器
 
