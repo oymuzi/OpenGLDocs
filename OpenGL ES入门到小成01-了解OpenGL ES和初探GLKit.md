@@ -92,6 +92,44 @@ OpenGL ES (OpenGL for Embedded Systems) 是以手持和嵌入式为目标的高�
 
 
 
+#### 几个常见的对象
+
+###### EAGLContext
+
+> EAGLContext对象管理OpenGL ES渲染上下文 - 使用OpenGL ES绘制所需的状态信息，命令和资源。要执行OpenGL ES命令，就需要一个当前的渲染上下文。
+
+
+
+###### GLKView
+
+> 一个继承自UIView而且默认使用OpenGL ES渲染的视图。GLKView类通过直接代表管理帧缓冲对象，简化了创建OpenGL ES应用程序所需的工作量;当需要更新内容时，您的应用程序只需要绘制到帧缓冲区中。
+
+
+
+###### EAGLSharegroup
+
+> EAGLSharegroup对象是管理一个或多个EAGLContext对象关联的OpenGL ES资源，它是在初始化EAGLContext对象时创建的，并在释放引用它的最后一个EAGLContext对象时进行处理。改对象。该对象没有提供任何接口给开发者。
+
+
+
+###### GLKTextureLoader
+
+> GLKTextureLoader类可以加载Image I/O框架支持的大多数图像格式的二维或立方体贴图纹理。在iOS中，它还可以加载以PVRTC格式压缩的纹理。它可以同步或异步加载数据。
+
+
+
+###### GLKTextureInfo
+
+> 当您的应用使用GLKTextureLoader类加载纹理时，纹理加载器会使用GLKTextureInfo对象返回有关纹理的信息。您的应用永远不会直接创建GLKTextureInfo对象。
+
+
+
+###### GLKBaseEffect
+
+> GLKBaseEffect类提供的着色器模仿OpenGL ES 1.1照明和着色模型提供的许多行为，包括材质，光照和纹理。基本效果允许将最多三个灯光和两个纹理应用于场景。
+
+
+
 #### 使用GLKit加载图片
 
 我们知道使用UIImageView加载图片很简单，但是加载图片的底层用到了OpenGL ES，而GLKView也是封装在OpenGL ES之上的，可以看看如何使用GLKView加载一张图片。
@@ -102,11 +140,192 @@ OpenGL ES (OpenGL for Embedded Systems) 是以手持和嵌入式为目标的高�
 
 
 
+##### 几个常见对象的方法、属性
+
+###### EAGLContext
+
+ ```swift
+// 通过指定OpenGL ES版本初始化
+public convenience init?(api: EAGLRenderingAPI)
+
+// 通过指定OpenGL ES版本、OpenGL ES管理对象进行初始化
+public init?(api: EAGLRenderingAPI, sharegroup: EAGLSharegroup)
+
+// 设置当前的上下文    
+open class func setCurrent(_ context: EAGLContext?) -> Bool
+
+// 获得当前的上下文
+open class func current() -> EAGLContext?
+
+// 获取当前上下文的OpenGL ES版本    
+open var api: EAGLRenderingAPI { get }
+
+// 获取OpenGL ES管理对象
+open var sharegroup: EAGLSharegroup { get }
+
+// 标签说明上下文的用途
+open var debugLabel: String?
+
+// 是否开启多线程
+open var isMultiThreaded: Bool
+ ```
+
+
+
+###### GLKView
+
+
+```swift
+//通过frame和上下文来进行初始化
+public init(frame: CGRect, context: EAGLContext)
+
+// 代理    
+@IBOutlet unowned(unsafe) open var delegate: GLKViewDelegate?
+
+// 上下文    
+open var context: EAGLContext
+
+//   获取帧缓冲的宽、高 
+open var drawableWidth: Int { get }
+open var drawableHeight: Int { get }
+
+//渲染颜色缓冲区格式  
+open var drawableColorFormat: GLKViewDrawableColorFormat
+//渲染深度缓冲区格式
+open var drawableDepthFormat: GLKViewDrawableDepthFormat
+//渲染模板缓冲区格式
+open var drawableStencilFormat: GLKViewDrawableStencilFormat
+//多重采样格式
+open var drawableMultisample: GLKViewDrawableMultisample
+
+// 将帧缓冲区对象绑定到OpenGL ES
+open func bindDrawable()
+
+// 删除帧缓冲区对象
+open func deleteDrawable()
+
+// 获得绘制的一张快照，不应该在绘制时获取
+open var snapshot: UIImage { get }
+
+//控制视图是否响应setNeedsDisplay。如果为true，则视图与UIView类似。当视图已标记为响应时，将在下一个绘制周期中调用draw方法。如果是不响应时，在下一个绘图周期中永远不会调用视图的绘制方法。默认为true，但是在GLKViewController默认为false。
+open var enableSetNeedsDisplay: Bool
+
+//当enableSetNeedsDisplay值为false时，则需要使用此方法进行更新绘制内容
+open func display()
+
+// 代理方法。所有的绘制都需要在这里进行
+protocol func glkView(_ view: GLKView, drawIn rect: CGRect)
+```
+
+
+
+###### GLKTextureLoader
+
+```swift
+// 通过管理对象来进行初始化
+public init(sharegroup: EAGLSharegroup)
+
+/*******以下纹理加载方法为类方法都为同步、实例方法都为异步加载*******************/
+
+// 同步从本地文件路径加载纹理
+open class func texture(withContentsOfFile path: String, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
+
+// 同步从指定URL加载纹理
+open class func texture(withContentsOf url: URL, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
+
+// 同步从指定Assets下的图片名称来加载纹理
+open class func texture(withName name: String, scaleFactor: CGFloat, bundle: Bundle?, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
+
+// 同步从数据中加载纹理 
+open class func texture(withContentsOf data: Data, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
+
+// 同步从位图中加载纹理
+open class func texture(with cgImage: CGImage, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
+
+// 同步从本地路径加载六张图片作为立方体的纹理 右、左、上、下、前、后的顺序加载
+open class func cubeMap(withContentsOfFiles paths: [Any], options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
+
+// 同步从本地路径加载一张图片宽高均乘以6后作为立方体六个面的纹理
+open class func cubeMap(withContentsOfFile path: String, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo 
+
+// 同步从指定URL加载一张图片宽高均乘以6后作为立方体六个面的纹理
+open class func cubeMap(withContentsOf url: URL, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
+```
+
+
+
+###### GLKTextureInfo
+
+```swift
+// 纹理的名称
+open var name: GLuint { get }
+// 纹理的对象
+open var target: GLenum { get }
+// 纹理的宽、高
+open var width: GLuint { get }
+open var height: GLuint { get }
+// 纹理的深度
+open var depth: GLuint { get }
+// 纹理的透明度状态
+open var alphaState: GLKTextureInfoAlphaState { get }
+// 纹理的原点
+open var textureOrigin: GLKTextureInfoOrigin { get }
+// 是否包含mip贴图
+open var containsMipmaps: Bool { get }
+
+open var mimapLevelCount: GLuint { get }
+open var arrayLength: GLuint { get }
+```
+
+
+
+###### GLKBaseEffect
+
+```swift
+// 三个光照。默认是关闭的，需要手动开启 
+open var light0: GLKEffectPropertyLight { get } 
+open var light1: GLKEffectPropertyLight { get }
+open var light2: GLKEffectPropertyLight { get }
+// 光源类型从
+open var lightingType: GLKLightingType // GLKLightingTypePerVertex
+// 环境颜色
+open var lightModelAmbientColor: GLKVector4 // { 0.2, 0.2, 0.2, 1.0 }
+// 图元材质属性
+open var material: GLKEffectPropertyMaterial { get } // Default material state
+
+// 两个纹理，默认是关闭，需要手动开启
+open var texture2d0: GLKEffectPropertyTexture { get } // Disabled
+open var texture2d1: GLKEffectPropertyTexture { get }
+// 纹理顺序
+open var textureOrder: [GLKEffectPropertyTexture]? // texture2d0, texture2d1
+
+// 不提供顶点颜色时使用这个常量颜色
+open var constantColor: GLKVector4 // { 1.0, 1.0, 1.0, 1.0 }
+//雾化效果
+open var fog: GLKEffectPropertyFog { get } // Disabled
+// 标签
+open var label: String? // @"GLKBaseEffect"
+
+// 是否使用计算灯光与材质后的颜色
+open var colorMaterialEnabled: GLboolean // GL_FALSE
+// 是否是两面光照
+open var lightModelTwoSided: GLboolean // GL_FALSE
+// 是否使用常量颜色
+open var useConstantColor: GLboolean // GL_TRUE
+
+//准备渲染效果
+open func prepareToDraw()
+```
+
+
+
+
+
 #### 常用的API
 
 ##### 上下文初始化
 
-```
+```swift
 // 参数api是个枚举值，有openGLES1、openGLES2、openGLES3
 let context = EAGLContext.init(api: .openGLES3)
 
@@ -116,7 +335,7 @@ EAGLContext.setCurrent(context)
 
 ##### 设置GLKView
 
-```
+```swift
 // 初始化GLKView
 glKitView = GLKView.init(frame: CGRect.init(x: 0, y: 200, width:self.view.frame.width, height: self.view.frame.width))
 // 设置view的代理
@@ -138,16 +357,20 @@ self.view.addSubview(glKitView)
 
 ##### 创建VBO
 
-```
+```swift
 var bufferID: GLuint = 0
 glGenBuffers(1, &bufferID);
 ```
 
+
+
 ##### 绑定顶点缓冲区
 
-```
+```swift
 glBindBuffer(GLenum(GL_ARRAY_BUFFER), bufferID);
 ```
+
+
 
 ##### 将顶点坐标、纹理坐标拷贝至缓冲区
 
@@ -163,6 +386,8 @@ glBufferData(GLenum(GL_ARRAY_BUFFER), GLsizeiptr(MemoryLayout<VertexBuffer>.size
 >
 > 参数四：用途
 
+
+
 ##### 开启Attribute通道并传递顶点数据到缓冲区
 
 在iOS中，苹果为了提高性能所有的通道都是默认关闭的，如需使用需要手动开启。
@@ -173,7 +398,7 @@ glEnableVertexAttribArray(GLuint(GLKVertexAttrib.position.rawValue))
 
 在OC中获取占用字节数大小是使用函数**sizeof**来获取，在swift中使用**MemoryLayout<GLfloat>.size**。
 
-```
+```swift
 let pointerPtr = UnsafeRawPointer.init(bitPattern: MemoryLayout<GLfloat>.size * 0)
 
 glVertexAttribPointer(GLuint(GLKVertexAttrib.position.rawValue), 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(MemoryLayout<VertexBuffer>.size), pointerPtr)
@@ -197,7 +422,7 @@ glVertexAttribPointer(GLuint(GLKVertexAttrib.position.rawValue), 3, GLenum(GL_FL
 
 ##### 开启纹理一通道并传递纹理坐标
 
-```
+```swift
 glEnableVertexAttribArray(GLuint(GLKVertexAttrib.texCoord0.rawValue))
 
 let texturePtr = UnsafeRawPointer.init(bitPattern: MemoryLayout<GLfloat>.size * 3)
@@ -208,9 +433,7 @@ glVertexAttribPointer(GLuint(GLKVertexAttrib.texCoord0.rawValue), 2, GLenum(GL_F
 
 ##### 加载纹理
 
-我们都知道iOS的坐标计算是从左上角[0, 0]开始，到右下角[1, 1]。**但是在纹理中的原点不是左上角而是左下角，右上角为[1, 1]**，所以如果需要图片被正确方向的加载那么需要设置纹理的原点为左下角，否则得到的图片是一张倒立的图片。
-
-我们知道GLKit只有两个纹理通道，需要三种及以上的纹理只能通过GLSL来实现。共有五种纹理加载方式。
+我们都知道iOS的坐标计算是从左上角[0, 0]开始，到右下角[1, 1]。**但是在纹理中的原点不是左上角而是左下角，右上角为[1, 1]**，所以如果需要图片被正确方向的加载那么需要设置纹理的原点为左下角，否则得到的图片是一张倒立的图片。我们知道GLKit只有两个纹理通道，需要三种及以上的纹理只能通过GLSL来实现。
 
 ```swift
 /// 加载纹理的可选项
@@ -219,36 +442,13 @@ let options = [GLKTextureLoaderOriginBottomLeft: NSNumber.init(value: 1)];
 let textureInfo = try? GLKTextureLoader.texture(withContentsOfFile: texturePath, options: options)
 ```
 
-```swift
-//方式1  通过纹理图片的路径
-open class func texture(withContentsOfFile path: String, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
-```
 
-```swift
-//方式2 通过指定的URL加载纹理
-open class func texture(withContentsOf url: URL, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
-```
-
-```swift
-//方式3 通过资源夹Assets里的文件名加载纹理
-open class func texture(withName name: String, scaleFactor: CGFloat, bundle: Bundle?, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
-```
-
-```swift
-//方式4 通过指定纹理数据加载纹理
-open class func texture(withContentsOf data: Data, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
-```
-
-```swift
-//方式5 通过加载位图加载纹理
-open class func texture(with cgImage: CGImage, options: [String : NSNumber]? = nil) throws -> GLKTextureInfo
-```
 
 ##### GLKBaseEffect
 
 我们知道GLKView就是为了开发者更好的完成OpenGL ES的开发，所以GLKView的的着色器工作是由GLKBaseEffect来完成的。
 
-```
+```swift
 // 初始化
 let glkEffect = ELKBaseEffect()
 // 设置纹理通道1可用
@@ -259,11 +459,13 @@ glEffect.texture2d0.name = textureInfo.name
 glEffect.texture2d0.target = GLKTextureTarget(rawValue: textureInfo.target)!
 ```
 
+
+
 ##### 执行绘制
 
 执行绘制是在GLKView的代理方法**glkView(_ view: GLKView, drawIn rect: CGRect)**中
 
-```
+```swift
 // 清除颜色缓冲区
 glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
 // 准备开始绘制
@@ -276,6 +478,8 @@ glEffect.prepareToDraw()
 */
 glDrawArrays(GLenum(GL_TRIANGLES), 0, 6);
 ```
+
+
 
 ### 参考
 
