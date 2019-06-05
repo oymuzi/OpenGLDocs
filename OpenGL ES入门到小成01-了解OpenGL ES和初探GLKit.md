@@ -92,13 +92,13 @@ OpenGL ES (OpenGL for Embedded Systems) 是以手持和嵌入式为目标的高�
 
 
 
-#### 加载图片
+#### 使用GLKit加载图片
 
 我们知道使用UIImageView加载图片很简单，但是加载图片的底层用到了OpenGL ES，而GLKView也是封装在OpenGL ES之上的，可以看看如何使用GLKView加载一张图片。
 
 ![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/GLKit加载图片的过程.png)
 
-**案例一：使用GLKit加载图片[OC](https://github.com/oymuzi/OpenGLDocs/OpenGL ES Demo/OC/OpenGL ES GLKit加载图片)、[Swift]()**
+**案例一：使用GLKit加载图片[OC](<https://github.com/oymuzi/OpenGLDocs/tree/master/OpenGL%20ES%20Demo/OC/OpenGL%20ES%20GLKit%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87>)、[Swift](<https://github.com/oymuzi/OpenGLDocs/tree/master/OpenGL%20ES%20Demo/Swift/OpenGL%20ES%20GLKit%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87>)**
 
 
 
@@ -280,4 +280,3 @@ glDrawArrays(GLenum(GL_TRIANGLES), 0, 6);
 ### 参考
 
 参考文章：[sizeof与MemoryLayout](http://willwei.me/2017/06/30/Swift%20sizeof%E4%B8%8EMemoryLayout/)
-
