@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenGL ES GLKit&#x7acb;&#x65b9;&#x4f53;&#x52a0;&#x8f7d;&#x7eb9;&#x7406;/ViewController.swift"
+            timestampString = "581505362.3748111"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "prepareSource()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenGL ES GLKit&#x7acb;&#x65b9;&#x4f53;&#x52a0;&#x8f7d;&#x7eb9;&#x7406;/ViewController.swift"
+            timestampString = "581505362.376403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "prepareSource()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenGL_ES_GLKit&#x7acb;&#x65b9;&#x4f53;&#x52a0;&#x8f7d;&#x7eb9;&#x7406;.ViewController.(prepareSource in _4D8D4F205DBA39E1A0E5025CBFFB6FCE)() -&gt; ()"
+                  moduleName = "OpenGL ES GLKit&#x7acb;&#x65b9;&#x4f53;&#x52a0;&#x8f7d;&#x7eb9;&#x7406;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ios/Desktop/OpenGLDocs/OpenGL%20ES%20Demo/Swift/OpenGL%20ES%20GLKit%E7%AB%8B%E6%96%B9%E4%BD%93%E5%8A%A0%E8%BD%BD%E7%BA%B9%E7%90%86/OpenGL%20ES%20GLKit%E7%AB%8B%E6%96%B9%E4%BD%93%E5%8A%A0%E8%BD%BD%E7%BA%B9%E7%90%86/ViewController.swift"
+                  timestampString = "581505072.789479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "3320">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenGL_ES_GLKit&#x7acb;&#x65b9;&#x4f53;&#x52a0;&#x8f7d;&#x7eb9;&#x7406;.ViewController.(prepareSource in _4D8D4F205DBA39E1A0E5025CBFFB6FCE)() -&gt; ()"
+                  moduleName = "OpenGL ES GLKit&#x7acb;&#x65b9;&#x4f53;&#x52a0;&#x8f7d;&#x7eb9;&#x7406;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ios/Desktop/OpenGLDocs/OpenGL%20ES%20Demo/Swift/OpenGL%20ES%20GLKit%E7%AB%8B%E6%96%B9%E4%BD%93%E5%8A%A0%E8%BD%BD%E7%BA%B9%E7%90%86/OpenGL%20ES%20GLKit%E7%AB%8B%E6%96%B9%E4%BD%93%E5%8A%A0%E8%BD%BD%E7%BA%B9%E7%90%86/ViewController.swift"
+                  timestampString = "581505072.7948771"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "3608">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
