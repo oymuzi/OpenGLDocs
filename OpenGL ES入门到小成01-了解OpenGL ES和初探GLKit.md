@@ -69,11 +69,16 @@ OpenGL ES (OpenGL for Embedded Systems) 是以手持和嵌入式为目标的高�
 **OpenGL ES**规范没有定义窗口层，托管操作系统必须提供函数来创建一个**OpenGL ES** 渲染上下文和一个帧缓冲区，写入任何绘图命令的结果 。
 **OpenGL ES 命令需要渲染上下文和绘制表面才能完成图形图像的绘制。但是OpenGL ES API并没有提供如何渲染上下文或者上下文如何连接到原生窗口系统，EGL是Khronos渲染API(OpenGL ES)和原生窗口的之间的接口，iOS是唯一支持OpenGL ES却不支持EGL的平台，因为Apple提供自己的EGL API实现——  EAGL。**
 
->**EAGL**的主要功能
+>**EAGL**的主要功能:
+>
 >1.和本地窗口系统通讯
+>
 >2.查询可用的配置
+>
 >3.创建OpenGL ES可用的绘制表面（drawing surface）。用于绘制图元的表面，指定渲染所需的缓存区类型，例如颜色缓存区、深度缓存区和模板缓冲区。
+>
 >4.同步不同类别之间的API，例如OpenGL ES 和OpenVG，或者本地OpenGL ES在和本地绘图命令之间。
+>
 >5.管理渲染资源，例如纹理映射（rendering map)。
 
 > **EGLDisplay**：因为每个窗口系统都有不同的定义，所以EGL提供基本不透明的类型：EGLDisplay，这个人类型封装了所有的系统相关性，用于和原生窗口系统接口。
