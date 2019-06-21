@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  OpenGL ES 入门GLSL
 //
-//  Created by 欧阳林 on 2019/6/20.
-//  Copyright © 2019年 欧阳林. All rights reserved.
+//  Created by oymuzi on 2019/6/20.
+//  Copyright © 2019年 oymuzi. All rights reserved.
 //
 
 import UIKit

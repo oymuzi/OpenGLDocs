@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814E451522BCA62500DA0542 /* OMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814E451422BCA62500DA0542 /* OMView.swift */; };
+		814E451722BCB34E00DA0542 /* shaderv.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 814E451622BCB34E00DA0542 /* shaderv.vsh */; };
+		814E451922BCB3E800DA0542 /* shaderf.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 814E451822BCB3E800DA0542 /* shaderf.fsh */; };
+		814E451B22BCEC3B00DA0542 /* timor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 814E451A22BCEC3B00DA0542 /* timor.jpg */; };
 		B614F39422BBB06D00945543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614F39322BBB06D00945543 /* AppDelegate.swift */; };
 		B614F39622BBB06D00945543 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614F39522BBB06D00945543 /* ViewController.swift */; };
 		B614F39922BBB06D00945543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B614F39722BBB06D00945543 /* Main.storyboard */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		814E451422BCA62500DA0542 /* OMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMView.swift; sourceTree = "<group>"; };
+		814E451622BCB34E00DA0542 /* shaderv.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shaderv.vsh; sourceTree = "<group>"; };
+		814E451822BCB3E800DA0542 /* shaderf.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shaderf.fsh; sourceTree = "<group>"; };
+		814E451A22BCEC3B00DA0542 /* timor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timor.jpg; sourceTree = "<group>"; };
 		B614F39022BBB06D00945543 /* OpenGL ES 入门GLSL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenGL ES 入门GLSL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B614F39322BBB06D00945543 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B614F39522BBB06D00945543 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +107,10 @@
 			children = (
 				B614F39322BBB06D00945543 /* AppDelegate.swift */,
 				B614F39522BBB06D00945543 /* ViewController.swift */,
+				814E451422BCA62500DA0542 /* OMView.swift */,
+				814E451A22BCEC3B00DA0542 /* timor.jpg */,
+				814E451622BCB34E00DA0542 /* shaderv.vsh */,
+				814E451822BCB3E800DA0542 /* shaderf.fsh */,
 				B614F39722BBB06D00945543 /* Main.storyboard */,
 				B614F39A22BBB06F00945543 /* Assets.xcassets */,
 				B614F39C22BBB06F00945543 /* LaunchScreen.storyboard */,
@@ -229,9 +241,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				814E451922BCB3E800DA0542 /* shaderf.fsh in Resources */,
 				B614F39E22BBB06F00945543 /* LaunchScreen.storyboard in Resources */,
 				B614F39B22BBB06F00945543 /* Assets.xcassets in Resources */,
+				814E451722BCB34E00DA0542 /* shaderv.vsh in Resources */,
 				B614F39922BBB06D00945543 /* Main.storyboard in Resources */,
+				814E451B22BCEC3B00DA0542 /* timor.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B614F39622BBB06D00945543 /* ViewController.swift in Sources */,
+				814E451522BCA62500DA0542 /* OMView.swift in Sources */,
 				B614F39422BBB06D00945543 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
