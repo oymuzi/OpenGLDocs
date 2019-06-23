@@ -18,6 +18,7 @@
 		B614F39E22BBB06F00945543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B614F39C22BBB06F00945543 /* LaunchScreen.storyboard */; };
 		B614F3A922BBB07000945543 /* OpenGL_ES___GLSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614F3A822BBB07000945543 /* OpenGL_ES___GLSLTests.swift */; };
 		B614F3B422BBB07000945543 /* OpenGL_ES___GLSLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614F3B322BBB07000945543 /* OpenGL_ES___GLSLUITests.swift */; };
+		B660E83A22BDFDED00CA3065 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B660E83922BDFDED00CA3065 /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B614F3AF22BBB07000945543 /* OpenGL ES 入门GLSLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OpenGL ES 入门GLSLUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B614F3B322BBB07000945543 /* OpenGL_ES___GLSLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenGL_ES___GLSLUITests.swift"; sourceTree = "<group>"; };
 		B614F3B522BBB07000945543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B660E83922BDFDED00CA3065 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B660E83A22BDFDED00CA3065 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,7 @@
 				B614F3A722BBB07000945543 /* OpenGL ES 入门GLSLTests */,
 				B614F3B222BBB07000945543 /* OpenGL ES 入门GLSLUITests */,
 				B614F39122BBB06D00945543 /* Products */,
+				B660E83822BDFDED00CA3065 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +139,14 @@
 				B614F3B522BBB07000945543 /* Info.plist */,
 			);
 			path = "OpenGL ES 入门GLSLUITests";
+			sourceTree = "<group>";
+		};
+		B660E83822BDFDED00CA3065 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B660E83922BDFDED00CA3065 /* OpenGLES.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -48,14 +48,13 @@ class OMView: UIView {
         self.setupUI()
     }
     
-    
-    override var layer: CAEAGLLayer{
-        return CAEAGLLayer.init()
+    override class var layerClass: AnyClass{
+        return CAEAGLLayer.self
     }
     
     // 1.设置图层
     private func setupLayer(){
-        self.myEaglLayer = self.layer
+        self.myEaglLayer = self.layer as? CAEAGLLayer
         // 设置放大缩放系数
         self.contentScaleFactor = UIScreen.main.scale
         // kEAGLDrawablePropertyRetainedBacking 表示绘制表面后是否还保留其内容
@@ -149,8 +148,10 @@ class OMView: UIView {
         }
         
         // 5.加载着色器
-        let vertexShader = self.loadShaderAndCompilerWithPath(vertexShaderFilePath, shaderType: GLenum(GL_VERTEX_SHADER))
-        let fragmentShader = self.loadShaderAndCompilerWithPath(fragmentShaderFilePath, shaderType: GLenum(GL_FRAGMENT_SHADER))
+        var vertexShader: GLuint = 0
+        var fragmentShader: GLuint = 0
+        self.loadShaderAndCompilerWith(shader: &vertexShader, path: vertexShaderFilePath, shaderType: GLenum(GL_VERTEX_SHADER))
+        self.loadShaderAndCompilerWith(shader: &fragmentShader, path: fragmentShaderFilePath, shaderType: GLenum(GL_FRAGMENT_SHADER))
         
         // 6. 创建一个程序
         let program = glCreateProgram()
@@ -159,6 +160,7 @@ class OMView: UIView {
         glAttachShader(program, vertexShader)
         glAttachShader(program, fragmentShader)
         
+        self.myProgram = program
         // 8. 已经附着在程序上可删除着色器
         glDeleteShader(vertexShader)
         glDeleteShader(fragmentShader)
@@ -201,25 +203,26 @@ class OMView: UIView {
         //把标识符绑定到GL_ARRAY_BUFFER标识符上
         glBindBuffer(GLenum(GL_ARRAY_BUFFER), attributeBuffer)
         // 把顶点数据拷贝至GPU中
-        glBufferData(GLenum(GL_ARRAY_BUFFER), MemoryLayout.size(ofValue: VAO), VAO, GLenum(GL_STATIC_DRAW))
+        glBufferData(GLenum(GL_ARRAY_BUFFER), MemoryLayout<OMVertex>.size * VAO.count, VAO, GLenum(GL_STATIC_DRAW))
         
         
         // 13. 将顶点数据通过program传递至顶点着色器中的顶点属性, 且名字必须和顶点着色器的名字一致，并告诉OpenGL ES开启指定的attribute通道
-        let positionName = "position".cString(using: .utf8)
-        let positionNamePtr = UnsafePointer<GLchar>.init(positionName)
+//        let positionName = "position".cString(using: .utf8)
+//        let positionNamePtr = UnsafePointer<GLchar>.init(positionName)
 
-        let position = glGetAttribLocation(program, positionNamePtr)
+        let position = glGetAttribLocation(program, "position")
         glEnableVertexAttribArray(GLuint(position))
         // 设置读取顶点方式
-        glVertexAttribPointer(GLuint(position), GLint(MemoryLayout<GLfloat>.size * 3), GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(MemoryLayout<OMVertex>.size), nil)
+        let positionOffsetPtr = UnsafeRawPointer.init(bitPattern: MemoryLayout<GLfloat>.size * 0)
+        glVertexAttribPointer(GLuint(position), 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(MemoryLayout<OMVertex>.size), positionOffsetPtr)
         
         //14. 处理纹理数据
-        let textureName = "textureCoordinate".cString(using: .utf8)
-        let textureNamePtr = UnsafePointer<GLchar>.init(textureName)
-        let texture = glGetAttribLocation(program, textureNamePtr)
+//        let textureName = "textureCoordinate".cString(using: .utf8)
+//        let textureNamePtr = UnsafePointer<GLchar>.init(textureName)
+        let texture = glGetAttribLocation(program, "textureCoordinate")
         glEnableVertexAttribArray(GLuint(texture))
         let offsetPtr = UnsafeRawPointer.init(bitPattern: MemoryLayout<GLfloat>.size * 3)
-        glVertexAttribPointer(GLuint(texture), GLint(MemoryLayout<GLfloat>.size * 2), GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(MemoryLayout<OMVertex>.size), offsetPtr)
+        glVertexAttribPointer(GLuint(texture), 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(MemoryLayout<OMVertex>.size), offsetPtr)
         
         // 14. 加载纹理
         guard let path = Bundle.main.path(forResource: "timor", ofType: "jpg") else {
@@ -229,12 +232,13 @@ class OMView: UIView {
         self.loadTextureWithImage(path: path)
         
         // 15.设置纹理采样器 sampler2D
-        let colorMapName = "colorMap".cString(using: .utf8)
-        let colorMapNamePtr = UnsafePointer<GLchar>.init(colorMapName)
-        glUniform1i(glGetUniformLocation(program, colorMapNamePtr), 0)
+//        let colorMapName = "colorMap".cString(using: .utf8)
+//        let colorMapNamePtr = UnsafePointer<GLchar>.init(colorMapName)
+        glUniform1i(glGetUniformLocation(program, "colorMap"), 0)
         
+
         // 16.绘制
-        glDrawArrays(GLenum(GL_TRIANGLES), 0, GLsizei(6))
+        glDrawArrays(GLenum(GL_TRIANGLES), 0, 6)
         
         // 17. 把渲染缓存区输出到屏幕上
         self.myContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
@@ -249,7 +253,7 @@ class OMView: UIView {
     ///   - path: 着色器路径
     ///   - shaderType: 着色器类型
     /// - Returns: 着色器
-    private func loadShaderAndCompilerWithPath(_ path: String, shaderType: GLenum) -> GLuint {
+    private func loadShaderAndCompilerWith(shader: inout GLuint, path: String, shaderType: GLenum) {
         var content = ""
         do {
             let contentString = try String.init(contentsOfFile: path)
@@ -258,18 +262,12 @@ class OMView: UIView {
             print("加载着色器文件失败")
         }
         
-        // 长度
-        let dataSize: GLint = GLint(content.count)
-        let dataBytes = UnsafeMutableRawPointer.allocate(byteCount: Int(dataSize), alignment: 0)
-        let sourcePtr = dataBytes.assumingMemoryBound(to: GLchar.self)
-        var source: UnsafePointer<UnsafePointer<GLchar>?>!
-        withUnsafePointer(to: sourcePtr) { (ptr)  in
-            source = unsafeBitCast(ptr, to: UnsafePointer<UnsafePointer<GLchar>?>.self)
-        }
-        let shader: GLuint = glCreateShader(shaderType)
-        glShaderSource(shader, 1, source, nil)
-        
-        return shader
+  
+
+        var source: UnsafePointer<GLchar>? = UnsafePointer<GLchar>(content)
+        shader = glCreateShader(shaderType)
+        glShaderSource(shader, 1, &source, nil)
+        glCompileShader(shader)
     }
     
     
@@ -291,13 +289,13 @@ class OMView: UIView {
         // 获取图片字节数
         let imageData = calloc(imageWidth * imageHeight * 4, MemoryLayout<GLubyte>.size)
         // 创建上下文
-        var context = CGContext.init(data: imageData, width: imageWidth, height: imageHeight, bitsPerComponent: 8, bytesPerRow: imageWidth * 4, space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)
+        let context = CGContext.init(data: imageData, width: imageWidth, height: imageHeight, bitsPerComponent: 8, bytesPerRow: imageWidth * 4, space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)
     
         let rect = CGRect.init(x: 0, y: 0, width: imageWidth, height: imageHeight)
         // 在CGImageRef绘制图片。不同的是Core Graphics的坐标系是在左下角，和纹理坐标是一致的。而UIKit的坐标系的起点是左上角
         context?.draw(cgImage, in: rect)
         // 绘制完释放上下文
-        free(&context)
+//        free(&context)
         // 绑定纹理
         glBindTexture(GLenum(GL_TEXTURE_2D), 0)
         // 设置纹理属性
@@ -309,7 +307,7 @@ class OMView: UIView {
         // 载入纹理
         let imgW: Float = Float(imageWidth)
         let imgH: Float = Float(imageHeight)
-        glTexImage2D(GLenum(GL_TEXTURE_2D), 0, GLint(GL_RGBA), GLsizei(imgW), GLsizei(imgH), 0, GLenum(GL_RGBA), GLenum(GL_UNSIGNED_BYTE), imageData)
+        glTexImage2D(GLenum(GL_TEXTURE_2D), 0, GL_RGBA, GLsizei(imgW), GLsizei(imgH), 0, GLenum(GL_RGBA), GLenum(GL_UNSIGNED_BYTE), imageData)
         // 释放数据
         free(imageData)
     }

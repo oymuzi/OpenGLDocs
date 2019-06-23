@@ -15,7 +15,9 @@ class ViewController: UIViewController {
         
         let aView = OMView.init(frame: self.view.frame)
         
+        
         self.view.addSubview(aView)
+        aView.layoutIfNeeded()
     }
 
 
