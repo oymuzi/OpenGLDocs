@@ -16,8 +16,17 @@
 		B616891822C3B7BE0074DD20 /* OpenGL_ES_____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616891722C3B7BE0074DD20 /* OpenGL_ES_____UITests.swift */; };
 		B616892622C3B7F10074DD20 /* OMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616892522C3B7F10074DD20 /* OMView.swift */; };
 		B616892822C3CC6F0074DD20 /* timor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B616892722C3CC6F0074DD20 /* timor.jpg */; };
-		B616892B22C3CCAF0074DD20 /* Vertex_normal.shader in Resources */ = {isa = PBXBuildFile; fileRef = B616892A22C3CCAF0074DD20 /* Vertex_normal.shader */; };
-		B616892D22C3CCC70074DD20 /* Fragment_normal.shader in Resources */ = {isa = PBXBuildFile; fileRef = B616892C22C3CCC60074DD20 /* Fragment_normal.shader */; };
+		B616893722C4FC150074DD20 /* VertexShaderNormal.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B616893622C4FC150074DD20 /* VertexShaderNormal.vsh */; };
+		B616893922C4FD360074DD20 /* FragmentShaderNormal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B616893822C4FD360074DD20 /* FragmentShaderNormal.fsh */; };
+		B616893B22C502BB0074DD20 /* OMFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616893A22C502BB0074DD20 /* OMFilterView.swift */; };
+		B616893E22C509500074DD20 /* VertexShaderSplit2.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B616893D22C509500074DD20 /* VertexShaderSplit2.vsh */; };
+		B616894022C509620074DD20 /* FragmentShaderSplit2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B616893F22C509620074DD20 /* FragmentShaderSplit2.fsh */; };
+		B616894322C5102F0074DD20 /* VertexShaderSplit4.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B616894222C5102F0074DD20 /* VertexShaderSplit4.vsh */; };
+		B616894522C510460074DD20 /* FragmentShaderSplit4.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B616894422C510460074DD20 /* FragmentShaderSplit4.fsh */; };
+		B616894822C511EE0074DD20 /* VertexShaderSplit6.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B616894722C511EE0074DD20 /* VertexShaderSplit6.vsh */; };
+		B616894A22C512040074DD20 /* FragmentShaderSplit6.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B616894922C512040074DD20 /* FragmentShaderSplit6.fsh */; };
+		B616894D22C514BE0074DD20 /* VertexShaderSplit9.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B616894C22C514BE0074DD20 /* VertexShaderSplit9.vsh */; };
+		B616894F22C514D40074DD20 /* FragmentShaderSplit9.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B616894E22C514D40074DD20 /* FragmentShaderSplit9.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +62,17 @@
 		B616891922C3B7BE0074DD20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B616892522C3B7F10074DD20 /* OMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMView.swift; sourceTree = "<group>"; };
 		B616892722C3CC6F0074DD20 /* timor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timor.jpg; sourceTree = "<group>"; };
-		B616892A22C3CCAF0074DD20 /* Vertex_normal.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = Vertex_normal.shader; sourceTree = "<group>"; };
-		B616892C22C3CCC60074DD20 /* Fragment_normal.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fragment_normal.shader; sourceTree = "<group>"; };
+		B616893622C4FC150074DD20 /* VertexShaderNormal.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderNormal.vsh; sourceTree = "<group>"; };
+		B616893822C4FD360074DD20 /* FragmentShaderNormal.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderNormal.fsh; sourceTree = "<group>"; };
+		B616893A22C502BB0074DD20 /* OMFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMFilterView.swift; sourceTree = "<group>"; };
+		B616893D22C509500074DD20 /* VertexShaderSplit2.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderSplit2.vsh; sourceTree = "<group>"; };
+		B616893F22C509620074DD20 /* FragmentShaderSplit2.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderSplit2.fsh; sourceTree = "<group>"; };
+		B616894222C5102F0074DD20 /* VertexShaderSplit4.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderSplit4.vsh; sourceTree = "<group>"; };
+		B616894422C510460074DD20 /* FragmentShaderSplit4.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderSplit4.fsh; sourceTree = "<group>"; };
+		B616894722C511EE0074DD20 /* VertexShaderSplit6.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderSplit6.vsh; sourceTree = "<group>"; };
+		B616894922C512040074DD20 /* FragmentShaderSplit6.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderSplit6.fsh; sourceTree = "<group>"; };
+		B616894C22C514BE0074DD20 /* VertexShaderSplit9.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderSplit9.vsh; sourceTree = "<group>"; };
+		B616894E22C514D40074DD20 /* FragmentShaderSplit9.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderSplit9.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +123,15 @@
 		B61688F622C3B7B90074DD20 /* OpenGL ES 滤镜入门 */ = {
 			isa = PBXGroup;
 			children = (
+				B616894B22C5148A0074DD20 /* Split9 */,
+				B616894622C511D30074DD20 /* Split6 */,
+				B616894122C5100B0074DD20 /* Split4 */,
+				B616893C22C509040074DD20 /* Split_2 */,
 				B616892922C3CC920074DD20 /* NormalShader */,
 				B61688F722C3B7B90074DD20 /* AppDelegate.swift */,
 				B61688F922C3B7B90074DD20 /* ViewController.swift */,
 				B616892522C3B7F10074DD20 /* OMView.swift */,
+				B616893A22C502BB0074DD20 /* OMFilterView.swift */,
 				B616892722C3CC6F0074DD20 /* timor.jpg */,
 				B61688FB22C3B7B90074DD20 /* Main.storyboard */,
 				B61688FE22C3B7BD0074DD20 /* Assets.xcassets */,
@@ -139,10 +162,46 @@
 		B616892922C3CC920074DD20 /* NormalShader */ = {
 			isa = PBXGroup;
 			children = (
-				B616892A22C3CCAF0074DD20 /* Vertex_normal.shader */,
-				B616892C22C3CCC60074DD20 /* Fragment_normal.shader */,
+				B616893622C4FC150074DD20 /* VertexShaderNormal.vsh */,
+				B616893822C4FD360074DD20 /* FragmentShaderNormal.fsh */,
 			);
 			path = NormalShader;
+			sourceTree = "<group>";
+		};
+		B616893C22C509040074DD20 /* Split_2 */ = {
+			isa = PBXGroup;
+			children = (
+				B616893D22C509500074DD20 /* VertexShaderSplit2.vsh */,
+				B616893F22C509620074DD20 /* FragmentShaderSplit2.fsh */,
+			);
+			path = Split_2;
+			sourceTree = "<group>";
+		};
+		B616894122C5100B0074DD20 /* Split4 */ = {
+			isa = PBXGroup;
+			children = (
+				B616894222C5102F0074DD20 /* VertexShaderSplit4.vsh */,
+				B616894422C510460074DD20 /* FragmentShaderSplit4.fsh */,
+			);
+			path = Split4;
+			sourceTree = "<group>";
+		};
+		B616894622C511D30074DD20 /* Split6 */ = {
+			isa = PBXGroup;
+			children = (
+				B616894722C511EE0074DD20 /* VertexShaderSplit6.vsh */,
+				B616894922C512040074DD20 /* FragmentShaderSplit6.fsh */,
+			);
+			path = Split6;
+			sourceTree = "<group>";
+		};
+		B616894B22C5148A0074DD20 /* Split9 */ = {
+			isa = PBXGroup;
+			children = (
+				B616894C22C514BE0074DD20 /* VertexShaderSplit9.vsh */,
+				B616894E22C514D40074DD20 /* FragmentShaderSplit9.fsh */,
+			);
+			path = Split9;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,12 +308,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B616894A22C512040074DD20 /* FragmentShaderSplit6.fsh in Resources */,
+				B616894F22C514D40074DD20 /* FragmentShaderSplit9.fsh in Resources */,
+				B616894022C509620074DD20 /* FragmentShaderSplit2.fsh in Resources */,
+				B616894822C511EE0074DD20 /* VertexShaderSplit6.vsh in Resources */,
 				B616890222C3B7BD0074DD20 /* LaunchScreen.storyboard in Resources */,
-				B616892D22C3CCC70074DD20 /* Fragment_normal.shader in Resources */,
 				B61688FF22C3B7BD0074DD20 /* Assets.xcassets in Resources */,
+				B616893922C4FD360074DD20 /* FragmentShaderNormal.fsh in Resources */,
+				B616894522C510460074DD20 /* FragmentShaderSplit4.fsh in Resources */,
+				B616893722C4FC150074DD20 /* VertexShaderNormal.vsh in Resources */,
 				B61688FD22C3B7B90074DD20 /* Main.storyboard in Resources */,
+				B616894D22C514BE0074DD20 /* VertexShaderSplit9.vsh in Resources */,
 				B616892822C3CC6F0074DD20 /* timor.jpg in Resources */,
-				B616892B22C3CCAF0074DD20 /* Vertex_normal.shader in Resources */,
+				B616894322C5102F0074DD20 /* VertexShaderSplit4.vsh in Resources */,
+				B616893E22C509500074DD20 /* VertexShaderSplit2.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +348,7 @@
 			files = (
 				B61688FA22C3B7B90074DD20 /* ViewController.swift in Sources */,
 				B616892622C3B7F10074DD20 /* OMView.swift in Sources */,
+				B616893B22C502BB0074DD20 /* OMFilterView.swift in Sources */,
 				B61688F822C3B7B90074DD20 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

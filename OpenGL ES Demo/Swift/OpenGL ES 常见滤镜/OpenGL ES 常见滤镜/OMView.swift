@@ -1,8 +1,8 @@
 //
 //  OMView.swift
-//  OpenGL ES 滤镜入门
+//  OpenGL ES 常见滤镜
 //
-//  Created by 欧阳林 on 2019/6/26.
+//  Created by 欧阳林 on 2019/6/29.
 //  Copyright © 2019年 欧阳林. All rights reserved.
 //
 
@@ -38,7 +38,7 @@ class OMView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
     public func changeProgramWithName(_ name: String){
         self.programName = name
         self.layoutSubviews()
@@ -100,7 +100,7 @@ class OMView: UIView {
         glViewport(0, 0, GLsizei(self.frame.width), GLsizei(self.frame.height))
         
     }
-
+    
     
     private func setupProgramWithName(_ name: String) {
         guard let vertexFile = Bundle.main.path(forResource: "VertexShader\(name)", ofType: "vsh"), let fragmentFile = Bundle.main.path(forResource: "FragmentShader\(name)", ofType: "fsh") else {
@@ -145,7 +145,7 @@ class OMView: UIView {
             OMVertex(x: 1.0, y: -1.0, z: -1.0, textureX: 1.0, textureY: 0.0),
             OMVertex(x: -1.0, y: 1.0, z: -1.0, textureX: 0.0, textureY: 1.0),
             OMVertex(x: -1.0, y: -1.0, z: -1.0, textureX: 0.0, textureY: 0.0),
-        ]
+            ]
         var vertexBuffer: GLuint = 0
         glGenBuffers(1, &vertexBuffer)
         glBindBuffer(GLenum(GL_ARRAY_BUFFER), vertexBuffer)
@@ -159,7 +159,7 @@ class OMView: UIView {
         glEnableVertexAttribArray(texture)
         glVertexAttribPointer(texture, 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(MemoryLayout<OMVertex>.size), UnsafeRawPointer(bitPattern: MemoryLayout<GLfloat>.size * 3))
         
-        self.loadTextureWith(name: "timor", type: "jpg")
+        self.loadTextureWith(name: "cute", type: "jpg")
         
         
     }
@@ -217,5 +217,5 @@ class OMView: UIView {
         glShaderSource(shader, 1, &shaderSource, nil)
         glCompileShader(shader)
     }
-
+    
 }
