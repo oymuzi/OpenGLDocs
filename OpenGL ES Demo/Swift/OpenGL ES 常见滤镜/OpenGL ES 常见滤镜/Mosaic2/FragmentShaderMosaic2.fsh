@@ -8,8 +8,8 @@ const float mosaicSize = 0.03;
 void main(){
     
     float length = mosaicSize;
-    float TX = 1.5;
-    float TY = 0.866025;
+    float TX = 3.0 / 2.0;
+    float TY = sqrt(3.0) / 2.0;
     
     float x = textureCoord.x;
     float y = textureCoord.y;
