@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let filterView = OMFilterView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: 80))
         filterView.center = CGPoint(x: self.view.frame.width / 2 , y: self.view.frame.maxY - 70.0)
         
-        filterView.setTitleArray(titles: ["普通", "灰度", "翻转", "旋涡", "马赛克", "蜂窝马赛克"])
+        filterView.setTitleArray(titles: ["普通", "灰度", "翻转", "旋涡", "马赛克", "蜂窝马赛克", "三角马赛克"])
         filterView.selectedTitleBlock = { [weak self] index  in
             guard let _ = self else { return }
             switch index {
@@ -39,6 +39,8 @@ class ViewController: UIViewController {
                 drawView.changeProgramWithName("Mosaic")
             case 5:
                 drawView.changeProgramWithName("Mosaic2")
+            case 6:
+                drawView.changeProgramWithName("Mosaic3")
             default:
                 break
             }

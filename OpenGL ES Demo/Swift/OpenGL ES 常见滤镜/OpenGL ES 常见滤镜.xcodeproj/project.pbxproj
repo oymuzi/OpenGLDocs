@@ -29,6 +29,8 @@
 		B642515F22C8B2E400BB5965 /* FragmentShaderMosaic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B642515E22C8B2E400BB5965 /* FragmentShaderMosaic.fsh */; };
 		B642516222C8BBE700BB5965 /* VertexShaderMosaic2.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B642516122C8BBE700BB5965 /* VertexShaderMosaic2.vsh */; };
 		B642516422C8BC0500BB5965 /* FragmentShaderMosaic2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B642516322C8BC0500BB5965 /* FragmentShaderMosaic2.fsh */; };
+		B651AE1822CB8D1500D0CE43 /* VertexShaderMosaic3.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B651AE1722CB8D1500D0CE43 /* VertexShaderMosaic3.vsh */; };
+		B651AE1A22CB8D2300D0CE43 /* FragmentShaderMosaic3.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B651AE1922CB8D2300D0CE43 /* FragmentShaderMosaic3.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		B642515E22C8B2E400BB5965 /* FragmentShaderMosaic.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderMosaic.fsh; sourceTree = "<group>"; };
 		B642516122C8BBE700BB5965 /* VertexShaderMosaic2.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderMosaic2.vsh; sourceTree = "<group>"; };
 		B642516322C8BC0500BB5965 /* FragmentShaderMosaic2.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderMosaic2.fsh; sourceTree = "<group>"; };
+		B651AE1722CB8D1500D0CE43 /* VertexShaderMosaic3.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderMosaic3.vsh; sourceTree = "<group>"; };
+		B651AE1922CB8D2300D0CE43 /* FragmentShaderMosaic3.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderMosaic3.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 		B642511022C7656800BB5965 /* OpenGL ES 常见滤镜 */ = {
 			isa = PBXGroup;
 			children = (
+				B651AE1622CB8CF300D0CE43 /* Mosaic3 */,
 				B642516022C8BBCA00BB5965 /* Mosaic2 */,
 				B642515B22C8B2B800BB5965 /* Mosaic */,
 				B642515622C8920D00BB5965 /* Vortex */,
@@ -216,6 +221,15 @@
 				B642516322C8BC0500BB5965 /* FragmentShaderMosaic2.fsh */,
 			);
 			path = Mosaic2;
+			sourceTree = "<group>";
+		};
+		B651AE1622CB8CF300D0CE43 /* Mosaic3 */ = {
+			isa = PBXGroup;
+			children = (
+				B651AE1722CB8D1500D0CE43 /* VertexShaderMosaic3.vsh */,
+				B651AE1922CB8D2300D0CE43 /* FragmentShaderMosaic3.fsh */,
+			);
+			path = Mosaic3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,8 +342,10 @@
 				B642515F22C8B2E400BB5965 /* FragmentShaderMosaic.fsh in Resources */,
 				B642515D22C8B2D100BB5965 /* VertexShaderMosaic.vsh in Resources */,
 				B642515822C8923000BB5965 /* VertexShaderVotex.vsh in Resources */,
+				B651AE1A22CB8D2300D0CE43 /* FragmentShaderMosaic3.fsh in Resources */,
 				B642514122C765EF00BB5965 /* VertexShaderBlackWhite.vsh in Resources */,
 				B642514E22C76D8B00BB5965 /* VertexShaderNormal.vsh in Resources */,
+				B651AE1822CB8D1500D0CE43 /* VertexShaderMosaic3.vsh in Resources */,
 				B642515022C76D9A00BB5965 /* FragmentShaderNormal.fsh in Resources */,
 				B642516222C8BBE700BB5965 /* VertexShaderMosaic2.vsh in Resources */,
 				B642511C22C7657B00BB5965 /* LaunchScreen.storyboard in Resources */,
