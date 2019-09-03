@@ -18,9 +18,9 @@
 
 ### OpenGL ES 篇
 
-1. [OpenGL ES 了解及初探GLKit]()
+1. [OpenGL ES 了解及初探GLKit](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL%20ES%20-%20%E8%AE%A4%E8%AF%86%E5%8F%8A%E5%88%9D%E6%8E%A2GLKit.md)
 
-2. [OpenGL ES 了解GLSL]()
+2. [OpenGL ES 了解GLSL](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL%20ES%20-%20%E4%BA%86%E8%A7%A3GLSL.md)
 3. [OpenGL ES 分屏滤镜]()
 4. [OpenGL ES 旋涡、马赛克滤镜]()
 5. [OpenGL ES 仿抖音滤镜]()
