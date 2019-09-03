@@ -2,7 +2,7 @@
 
 从上个章节我们学习了渲染的基础，可以绘制一些简单的图形，比如点、线、金字塔、三角形扇形、以及三角形圆环等图形，也感受到了绘制图形后兴奋感以及刺激感。但是在更多的场景会碰到一些问题，就比如绘制甜甜圈的时候会出现如下图的情况，简直惨不忍睹。
 
-![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/绘制甜甜圈出现的问题.gif)
+![](http://cloud.minder.mypup.cn/blog/OpenGL%E7%BB%98%E5%88%B6%E7%94%9C%E7%94%9C%E5%9C%88%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98.gif)
 
 
 
@@ -18,7 +18,7 @@
 
 答案是通过分析顶点数据的连接顺序。如下图所示：
 
-![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/顶点顺序.png)
+![](http://cloud.minder.mypup.cn/blog/OpenGL%E9%A1%B6%E7%82%B9%E9%A1%BA%E5%BA%8F.png)
 
 ```
 GLfloat vertices[] = {
@@ -37,7 +37,7 @@ GLfloat vertices[] = {
 
 下图是一张在观察者位置看到三角形顶点的连接顺序，背面的三角形顶点的连接顺序将会反转，如果观察点在左边，那么左右边的三角形的顶点连接顺序也会反转，以便在绘制的时候来剔除背面。**正⾯和背⾯是由三⻆形的顶点定义顺序和观察者方向共同决定的.随着观察者的角度方向的改变,正面背面也会跟着改变**
 
-![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/观察顶点连接顺序.png)
+![](http://cloud.minder.mypup.cn/blog/OpenGL%E8%A7%82%E5%AF%9F%E9%A1%B6%E7%82%B9%E8%BF%9E%E6%8E%A5%E9%A1%BA%E5%BA%8F.png)
 
 
 
@@ -61,7 +61,7 @@ glFrontFace(GL_CWW);
 
 我们开启正背面剔除后可以看到没有之前的那么不堪入目了，如下图所示。但是出现了一个新的问题，就是有的面没有绘制出来，这是为啥呢？那该怎么解决这个问题呢？
 
-![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/开启正背面剔除的效果.gif)
+![](http://cloud.minder.mypup.cn/blog/OpenGL%E5%BC%80%E5%90%AF%E6%AD%A3%E8%83%8C%E9%9D%A2%E5%89%94%E9%99%A4%E7%9A%84%E6%95%88%E6%9E%9C.gif)
 
 
 
@@ -89,7 +89,7 @@ glFrontFace(GL_CWW);
 好。深度值的范围在**[0,1]**之间，值越小表示越靠近观察者，值越大表示远离观察者。
 深度缓冲主要是通过计算深度值来比较⼤小，从观察者看到其内容与场景中的所有对象的 **z** 值进⾏了比较。这些视图空间中的 **z** 值可以在投影平头截体的近平面和远平面之间的任何值。我们因此需要⼀一些⽅方法来转换这些视图空间 **z** 值到 **[0**，**1]** 的范围内**,**下⾯面的 **(**线性**)** ⽅方程把 **z** 值转换为 **0.0** 和 **1.0** 之间的值：
 
-​						$F_{depth} = \cfrac {z - near}  {far - near}​$
+​						$F_{depth} = \cfrac {z - near}  {far - near}$
 
 实际运用很少运用到上述的线程方程来计算深度值，采用非线性来计算：
 
@@ -122,7 +122,7 @@ glDepthMask(GL_FALSE);
 
 下图展示了开启和关闭深度测试的效果：
 
-![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/开启和关闭深度测试的效果.gif)
+![](http://cloud.minder.mypup.cn/blog/OpenGL%E5%BC%80%E5%90%AF%E5%92%8C%E5%85%B3%E9%97%AD%E6%B7%B1%E5%BA%A6%E6%B5%8B%E8%AF%95%E7%9A%84%E6%95%88%E6%9E%9C.gif)
 
 
 
@@ -206,7 +206,7 @@ void glScissor(Glint x,Glint y,GLSize width,GLSize height);
 >
 > ​			$C_f = C_s * S + C_d * D $
 >
-> $C_f​$是混合颜色结果
+> $C_f$是混合颜色结果
 >
 > $C_s$是源颜色
 >
@@ -216,31 +216,30 @@ void glScissor(Glint x,Glint y,GLSize width,GLSize height);
 >
 > $D$是目标混合因子
 >
-> 
 > 还有如下混合方程式可供选择，使用设置方程式函数**glbBlendEquation(GLenum mode);**
 >
 > | 模式                     | 函数                          |
 > | ------------------------ | ----------------------------- |
 > | GL_FUNC_ADD              | $C_f$ = $C_s$ * S + $C_d$ * D |
-> | GL_FUNS_SUBTRACT         | $C_f$ = $C_s​$ * S - $C_d​$ * D |
+> | GL_FUNS_SUBTRACT         | $C_f$ = $C_s$ * S - $C_d$ * D |
 > | GL_FUNC_REVERSE_SUBTRACT | $C_f$ = $C_d$ * D - $C_s$ * S |
-> | GL_MIN                   | $C_f$ = min($C_s​$, $C_d​$)     |
+> | GL_MIN                   | $C_f$ = min($C_s$, $C_d$)     |
 > | GL_MAX                   | $C_f$ = max($C_s$, $C_d$)     |
 
 | 函数                        | RGB混合因子                         | Alpha混合因子 |
 | --------------------------- | ----------------------------------- | ------------- |
 | GL_ZERO                     | (0, 0, 0)                           | 0             |
 | GL_ONE                      | (1, 1, 1)                           | 1             |
-| GL_SRC_COLOR                | ($R_s$, $G_s​$, $B_s​$)               | $A_s$         |
-| GL_ONE_MINUS_SRC_COLOR      | (1, 1, 1) - ($R_s$, $G_s​$, $B_s​$)   | 1 - $A_s$     |
-| GL_DST_COLOR                | ($R_d$, $G_d​$, $B_d​$)               | $A_d$         |
-| GL_ONE_MINUS_DST_COLOR      | (1, 1, 1) - ($R_d$, $G_d​$, $B_d​$)   | 1 - $A_d$     |
-| GL_SRC_ALPHA                | ($A_s$, $A_s​$, $A_s​$ )              | $A_s$         |
+| GL_SRC_COLOR                | ($R_s$, $G_s$, $B_s$)               | $A_s$         |
+| GL_ONE_MINUS_SRC_COLOR      | (1, 1, 1) - ($R_s$, $G_s$, $B_s$)   | 1 - $A_s$     |
+| GL_DST_COLOR                | ($R_d$, $G_d$, $B_d$)               | $A_d$         |
+| GL_ONE_MINUS_DST_COLOR      | (1, 1, 1) - ($R_d$, $G_d$, $B_d$)   | 1 - $A_d$     |
+| GL_SRC_ALPHA                | ($A_s$, $A_s$, $A_s$ )              | $A_s$         |
 | GL_ONE_MINUS_SRC_ALPHA      | (1, 1, 1) - ($A_s$, $A_s$, $A_s$ )  | 1 - $A_s$     |
-| GL_DST_ALPHA                | ($A_d$, $A_d​$, $A_d​$)               | $A_d$         |
-| GL_ONE_MINUS_DST_ALPHA      | (1, 1, 1) - ($A_d$, $A_d​$, $A_d​$)   | 1 - $A_d$     |
+| GL_DST_ALPHA                | ($A_d$, $A_d$, $A_d$)               | $A_d$         |
+| GL_ONE_MINUS_DST_ALPHA      | (1, 1, 1) - ($A_d$, $A_d$, $A_d$)   | 1 - $A_d$     |
 | GL_CONSTANT_COLOR           | ($R_c$, $G_c$, $B_c$)               | $A_c$         |
-| GL_ONE_MINUS_CONSTANT_COLOR | (1, 1, 1) - ($R_c$, $G_c​$, $B_c​$)   | 1 - $A_c$     |
+| GL_ONE_MINUS_CONSTANT_COLOR | (1, 1, 1) - ($R_c$, $G_c$, $B_c$)   | 1 - $A_c$     |
 | GL_CONSTANT_ALPHA           | ($A_c$, $A_c$, $A_c$)               | $A_c$         |
 | GL_ONE_MINUS_CONSTANT_ALPHA | (1, 1, 1) - ($A_c$, $A_c$, $A_c$)   | 1 - $A_c$     |
 | GL_SRC_ALPHA_SATURATE       | (f, f, f) * f = min($A_s$, 1-$A_d$) | 1             |
