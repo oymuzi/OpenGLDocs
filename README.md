@@ -17,9 +17,7 @@
 6. [OpenGL-基础变换原理](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL-%E5%9F%BA%E7%A1%80%E5%8F%98%E6%8D%A2%E5%8E%9F%E7%90%86.md)
 
 ### OpenGL ES 篇
-
 1. [OpenGL ES 了解及初探GLKit](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL%20ES%20-%20%E8%AE%A4%E8%AF%86%E5%8F%8A%E5%88%9D%E6%8E%A2GLKit.md)
-
 2. [OpenGL ES 了解GLSL](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL%20ES%20-%20%E4%BA%86%E8%A7%A3GLSL.md)
 3. [OpenGL ES 分屏滤镜]()
 4. [OpenGL ES 旋涡、马赛克滤镜]()
