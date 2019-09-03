@@ -10,7 +10,7 @@ OpenGL ES (OpenGL for Embedded Systems) 是以手持和嵌入式为目标的高�
 
 ### 渲染流程
 
-![渲染流程图](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/OpenGL%20ES%E5%9B%BE%E5%BD%A2%E7%AE%A1%E7%BA%BF.png)
+![渲染流程图](http://cloud.minder.mypup.cn/blog/OpenGL%20ES%E5%9B%BE%E5%BD%A2%E7%AE%A1%E7%BA%BF.png)
 
 #### 顶点着色器
 
@@ -60,7 +60,7 @@ OpenGL ES (OpenGL for Embedded Systems) 是以手持和嵌入式为目标的高�
 
 #### 逐片段操作
 
-![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/OpenGLES逐片段操作.png)
+![](http://cloud.minder.mypup.cn/blog/OpenGLES%E9%80%90%E7%89%87%E6%AE%B5%E6%93%8D%E4%BD%9C.png)
 
 
 
@@ -85,7 +85,7 @@ OpenGL ES (OpenGL for Embedded Systems) 是以手持和嵌入式为目标的高�
 
 ### GLkit
 
-![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/OpenGLES通过GLKit渲染过程.png)
+![](http://cloud.minder.mypup.cn/blog/GLKit%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E7%9A%84%E8%BF%87%E7%A8%8B.png)
 
 > **GLKit** 框架的设计目标是为了简化基于**OpenGL / OpenGL ES** 的应⽤用开发。它的出现加快**OpenGL ES**或**OpenGL**应用程序开发。 使⽤数学库，背景纹理加载，预先创建的着色器器效果，以及标准视图和视图控制器来实现渲染循环。
 >
@@ -139,7 +139,7 @@ OpenGL ES (OpenGL for Embedded Systems) 是以手持和嵌入式为目标的高�
 
 我们知道使用UIImageView加载图片很简单，但是加载图片的底层用到了OpenGL ES，而GLKView也是封装在OpenGL ES之上的，可以看看如何使用GLKView加载一张图片。
 
-![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/GLKit加载图片的过程.png)
+![](http://cloud.minder.mypup.cn/blog/GLKit%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E7%9A%84%E8%BF%87%E7%A8%8B.png)
 
 **案例一：使用GLKit加载图片[OC](https://github.com/oymuzi/OpenGLDocs/tree/master/OpenGL%20ES%20Demo/OC/OpenGL%20ES%20GLKit%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87)、[Swift](https://github.com/oymuzi/OpenGLDocs/tree/master/OpenGL%20ES%20Demo/Swift/OpenGL%20ES%20GLKit%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87)**
 
@@ -401,7 +401,7 @@ glBufferData(GLenum(GL_ARRAY_BUFFER), GLsizeiptr(MemoryLayout<VertexBuffer>.size
 glEnableVertexAttribArray(GLuint(GLKVertexAttrib.position.rawValue))
 ```
 
-在OC中获取占用字节数大小是使用函数**sizeof**来获取，在swift中使用**MemoryLayout<GLfloat>.size**。
+在OC中获取占用字节数大小是使用函数**sizeof**来获取，在swift中使用`MemoryLayout<GLfloat>.size`。
 
 ```swift
 let pointerPtr = UnsafeRawPointer.init(bitPattern: MemoryLayout<GLfloat>.size * 0)
