@@ -12,7 +12,7 @@
 1. [OpenGL-基础名词释义](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL-%E5%9F%BA%E7%A1%80%E5%90%8D%E8%AF%8D%E9%87%8A%E4%B9%89.md)
 2. [OpenGL-渲染流程及坐标转换](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL-%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B%E5%8F%8A%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2.md)
 3. [OpenGL-渲染基础](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL-%E6%B8%B2%E6%9F%93%E5%9F%BA%E7%A1%80.md)
-4. [OpenGL-渲染技巧]([https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL-%E6%B8%B2%E6%9F%93%E6%8A%80%E5%B7%A7.md](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL-渲染技巧.md))
+4. [OpenGL-渲染技巧](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL-渲染技巧.md)
 5. [OpenGL-了解纹理](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL-%E4%BA%86%E8%A7%A3%E7%BA%B9%E7%90%86.md)
 6. [OpenGL-基础变换原理](https://github.com/oymuzi/OpenGLDocs/blob/master/OpenGL-%E5%9F%BA%E7%A1%80%E5%8F%98%E6%8D%A2%E5%8E%9F%E7%90%86.md)
 
