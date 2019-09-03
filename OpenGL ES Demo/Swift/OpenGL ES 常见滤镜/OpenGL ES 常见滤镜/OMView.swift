@@ -2,8 +2,8 @@
 //  OMView.swift
 //  OpenGL ES 常见滤镜
 //
-//  Created by 欧阳林 on 2019/6/29.
-//  Copyright © 2019年 欧阳林. All rights reserved.
+//  Created by oymuzi on 2019/6/29.
+//  Copyright © 2019年 oymuzi. All rights reserved.
 //
 
 import UIKit
