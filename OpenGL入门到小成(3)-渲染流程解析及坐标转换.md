@@ -1,6 +1,6 @@
 ### 渲染流程图
 
-![渲染流程图](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/OpenGL渲染结构.png)
+![渲染流程图](http://cloud.minder.mypup.cn/blog/OpenGL%E6%B8%B2%E6%9F%93%E7%BB%93%E6%9E%84.png)
 
 ### 渲染流程解析
 
@@ -56,13 +56,13 @@
 - **模型变换**是为了将通过顶点属性或3D建模创建的模型可以在实际场景中调整大小以及平移旋转至合适的位置。
 - **视变换**是根据一个虚拟的相机视觉来描述物体在世界空间的位置，因为我们知道物体从不同的角度去看会发现得到的画面是不一样的。
 
-![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/坐标转换.png)
+![](http://cloud.minder.mypup.cn/blog/OpenGL%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2.png)
 
 
 
 #### OpenGL 着色器渲染过程图
 
-![](https://github.com/oymuzi/OpenGLDocs/raw/master/Resources/着色器的渲染过程.jpeg)
+![](http://cloud.minder.mypup.cn/blog/OpenGL%E7%9D%80%E8%89%B2%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B.jpeg)
 
 
 
