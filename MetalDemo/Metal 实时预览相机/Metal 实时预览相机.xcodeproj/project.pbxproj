@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B66BAD7622DAC78800B2F750 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B66BAD7522DAC78800B2F750 /* AppDelegate.m */; };
+		B66BAD7922DAC78800B2F750 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66BAD7822DAC78800B2F750 /* ViewController.m */; };
+		B66BAD7C22DAC78800B2F750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66BAD7A22DAC78800B2F750 /* Main.storyboard */; };
+		B66BAD7E22DAC78C00B2F750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B66BAD7D22DAC78C00B2F750 /* Assets.xcassets */; };
+		B66BAD8122DAC78C00B2F750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66BAD7F22DAC78C00B2F750 /* LaunchScreen.storyboard */; };
+		B66BAD8422DAC78C00B2F750 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B66BAD8322DAC78C00B2F750 /* main.m */; };
+		B66BAD8E22DAC78C00B2F750 /* Metal_______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B66BAD8D22DAC78C00B2F750 /* Metal_______Tests.m */; };
+		B66BAD9922DAC78C00B2F750 /* Metal_______UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B66BAD9822DAC78C00B2F750 /* Metal_______UITests.m */; };
+		B66BADA822DAC94E00B2F750 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66BADA722DAC94E00B2F750 /* CoreVideo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B66BAD8A22DAC78C00B2F750 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B66BAD6922DAC78800B2F750 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B66BAD7022DAC78800B2F750;
+			remoteInfo = "Metal 实时预览相机";
+		};
+		B66BAD9522DAC78C00B2F750 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B66BAD6922DAC78800B2F750 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B66BAD7022DAC78800B2F750;
+			remoteInfo = "Metal 实时预览相机";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B66BAD7122DAC78800B2F750 /* Metal 实时预览相机.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metal 实时预览相机.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B66BAD7422DAC78800B2F750 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B66BAD7522DAC78800B2F750 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B66BAD7722DAC78800B2F750 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B66BAD7822DAC78800B2F750 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B66BAD7B22DAC78800B2F750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B66BAD7D22DAC78C00B2F750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B66BAD8022DAC78C00B2F750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B66BAD8222DAC78C00B2F750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B66BAD8322DAC78C00B2F750 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B66BAD8922DAC78C00B2F750 /* Metal 实时预览相机Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Metal 实时预览相机Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B66BAD8D22DAC78C00B2F750 /* Metal_______Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Metal_______Tests.m"; sourceTree = "<group>"; };
+		B66BAD8F22DAC78C00B2F750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B66BAD9422DAC78C00B2F750 /* Metal 实时预览相机UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Metal 实时预览相机UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B66BAD9822DAC78C00B2F750 /* Metal_______UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Metal_______UITests.m"; sourceTree = "<group>"; };
+		B66BAD9A22DAC78C00B2F750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B66BADA722DAC94E00B2F750 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B66BAD6E22DAC78800B2F750 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B66BADA822DAC94E00B2F750 /* CoreVideo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B66BAD8622DAC78C00B2F750 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B66BAD9122DAC78C00B2F750 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B66BAD6822DAC78800B2F750 = {
+			isa = PBXGroup;
+			children = (
+				B66BAD7322DAC78800B2F750 /* Metal 实时预览相机 */,
+				B66BAD8C22DAC78C00B2F750 /* Metal 实时预览相机Tests */,
+				B66BAD9722DAC78C00B2F750 /* Metal 实时预览相机UITests */,
+				B66BAD7222DAC78800B2F750 /* Products */,
+				B66BADA622DAC94E00B2F750 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B66BAD7222DAC78800B2F750 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B66BAD7122DAC78800B2F750 /* Metal 实时预览相机.app */,
+				B66BAD8922DAC78C00B2F750 /* Metal 实时预览相机Tests.xctest */,
+				B66BAD9422DAC78C00B2F750 /* Metal 实时预览相机UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B66BAD7322DAC78800B2F750 /* Metal 实时预览相机 */ = {
+			isa = PBXGroup;
+			children = (
+				B66BAD7422DAC78800B2F750 /* AppDelegate.h */,
+				B66BAD7522DAC78800B2F750 /* AppDelegate.m */,
+				B66BAD7722DAC78800B2F750 /* ViewController.h */,
+				B66BAD7822DAC78800B2F750 /* ViewController.m */,
+				B66BAD7A22DAC78800B2F750 /* Main.storyboard */,
+				B66BAD7D22DAC78C00B2F750 /* Assets.xcassets */,
+				B66BAD7F22DAC78C00B2F750 /* LaunchScreen.storyboard */,
+				B66BAD8222DAC78C00B2F750 /* Info.plist */,
+				B66BAD8322DAC78C00B2F750 /* main.m */,
+			);
+			path = "Metal 实时预览相机";
+			sourceTree = "<group>";
+		};
+		B66BAD8C22DAC78C00B2F750 /* Metal 实时预览相机Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B66BAD8D22DAC78C00B2F750 /* Metal_______Tests.m */,
+				B66BAD8F22DAC78C00B2F750 /* Info.plist */,
+			);
+			path = "Metal 实时预览相机Tests";
+			sourceTree = "<group>";
+		};
+		B66BAD9722DAC78C00B2F750 /* Metal 实时预览相机UITests */ = {
+			isa = PBXGroup;
+			children = (
+				B66BAD9822DAC78C00B2F750 /* Metal_______UITests.m */,
+				B66BAD9A22DAC78C00B2F750 /* Info.plist */,
+			);
+			path = "Metal 实时预览相机UITests";
+			sourceTree = "<group>";
+		};
+		B66BADA622DAC94E00B2F750 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B66BADA722DAC94E00B2F750 /* CoreVideo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B66BAD7022DAC78800B2F750 /* Metal 实时预览相机 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B66BAD9D22DAC78C00B2F750 /* Build configuration list for PBXNativeTarget "Metal 实时预览相机" */;
+			buildPhases = (
+				B66BAD6D22DAC78800B2F750 /* Sources */,
+				B66BAD6E22DAC78800B2F750 /* Frameworks */,
+				B66BAD6F22DAC78800B2F750 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Metal 实时预览相机";
+			productName = "Metal 实时预览相机";
+			productReference = B66BAD7122DAC78800B2F750 /* Metal 实时预览相机.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B66BAD8822DAC78C00B2F750 /* Metal 实时预览相机Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B66BADA022DAC78C00B2F750 /* Build configuration list for PBXNativeTarget "Metal 实时预览相机Tests" */;
+			buildPhases = (
+				B66BAD8522DAC78C00B2F750 /* Sources */,
+				B66BAD8622DAC78C00B2F750 /* Frameworks */,
+				B66BAD8722DAC78C00B2F750 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B66BAD8B22DAC78C00B2F750 /* PBXTargetDependency */,
+			);
+			name = "Metal 实时预览相机Tests";
+			productName = "Metal 实时预览相机Tests";
+			productReference = B66BAD8922DAC78C00B2F750 /* Metal 实时预览相机Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B66BAD9322DAC78C00B2F750 /* Metal 实时预览相机UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B66BADA322DAC78C00B2F750 /* Build configuration list for PBXNativeTarget "Metal 实时预览相机UITests" */;
+			buildPhases = (
+				B66BAD9022DAC78C00B2F750 /* Sources */,
+				B66BAD9122DAC78C00B2F750 /* Frameworks */,
+				B66BAD9222DAC78C00B2F750 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B66BAD9622DAC78C00B2F750 /* PBXTargetDependency */,
+			);
+			name = "Metal 实时预览相机UITests";
+			productName = "Metal 实时预览相机UITests";
+			productReference = B66BAD9422DAC78C00B2F750 /* Metal 实时预览相机UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B66BAD6922DAC78800B2F750 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "欧阳林";
+				TargetAttributes = {
+					B66BAD7022DAC78800B2F750 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					B66BAD8822DAC78C00B2F750 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = B66BAD7022DAC78800B2F750;
+					};
+					B66BAD9322DAC78C00B2F750 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = B66BAD7022DAC78800B2F750;
+					};
+				};
+			};
+			buildConfigurationList = B66BAD6C22DAC78800B2F750 /* Build configuration list for PBXProject "Metal 实时预览相机" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B66BAD6822DAC78800B2F750;
+			productRefGroup = B66BAD7222DAC78800B2F750 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B66BAD7022DAC78800B2F750 /* Metal 实时预览相机 */,
+				B66BAD8822DAC78C00B2F750 /* Metal 实时预览相机Tests */,
+				B66BAD9322DAC78C00B2F750 /* Metal 实时预览相机UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B66BAD6F22DAC78800B2F750 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B66BAD8122DAC78C00B2F750 /* LaunchScreen.storyboard in Resources */,
+				B66BAD7E22DAC78C00B2F750 /* Assets.xcassets in Resources */,
+				B66BAD7C22DAC78800B2F750 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B66BAD8722DAC78C00B2F750 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B66BAD9222DAC78C00B2F750 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B66BAD6D22DAC78800B2F750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B66BAD7922DAC78800B2F750 /* ViewController.m in Sources */,
+				B66BAD8422DAC78C00B2F750 /* main.m in Sources */,
+				B66BAD7622DAC78800B2F750 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B66BAD8522DAC78C00B2F750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B66BAD8E22DAC78C00B2F750 /* Metal_______Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B66BAD9022DAC78C00B2F750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B66BAD9922DAC78C00B2F750 /* Metal_______UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B66BAD8B22DAC78C00B2F750 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B66BAD7022DAC78800B2F750 /* Metal 实时预览相机 */;
+			targetProxy = B66BAD8A22DAC78C00B2F750 /* PBXContainerItemProxy */;
+		};
+		B66BAD9622DAC78C00B2F750 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B66BAD7022DAC78800B2F750 /* Metal 实时预览相机 */;
+			targetProxy = B66BAD9522DAC78C00B2F750 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B66BAD7A22DAC78800B2F750 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66BAD7B22DAC78800B2F750 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B66BAD7F22DAC78C00B2F750 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66BAD8022DAC78C00B2F750 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B66BAD9B22DAC78C00B2F750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B66BAD9C22DAC78C00B2F750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B66BAD9E22DAC78C00B2F750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24XGJH48UL;
+				INFOPLIST_FILE = "Metal 实时预览相机/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.oymuzi.Metal-------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B66BAD9F22DAC78C00B2F750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24XGJH48UL;
+				INFOPLIST_FILE = "Metal 实时预览相机/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.oymuzi.Metal-------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B66BADA122DAC78C00B2F750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24XGJH48UL;
+				INFOPLIST_FILE = "Metal 实时预览相机Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.oymuzi.Metal-------Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metal 实时预览相机.app/Metal 实时预览相机";
+			};
+			name = Debug;
+		};
+		B66BADA222DAC78C00B2F750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24XGJH48UL;
+				INFOPLIST_FILE = "Metal 实时预览相机Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.oymuzi.Metal-------Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metal 实时预览相机.app/Metal 实时预览相机";
+			};
+			name = Release;
+		};
+		B66BADA422DAC78C00B2F750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24XGJH48UL;
+				INFOPLIST_FILE = "Metal 实时预览相机UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.oymuzi.Metal-------UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Metal 实时预览相机";
+			};
+			name = Debug;
+		};
+		B66BADA522DAC78C00B2F750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24XGJH48UL;
+				INFOPLIST_FILE = "Metal 实时预览相机UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.oymuzi.Metal-------UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Metal 实时预览相机";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B66BAD6C22DAC78800B2F750 /* Build configuration list for PBXProject "Metal 实时预览相机" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B66BAD9B22DAC78C00B2F750 /* Debug */,
+				B66BAD9C22DAC78C00B2F750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B66BAD9D22DAC78C00B2F750 /* Build configuration list for PBXNativeTarget "Metal 实时预览相机" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B66BAD9E22DAC78C00B2F750 /* Debug */,
+				B66BAD9F22DAC78C00B2F750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B66BADA022DAC78C00B2F750 /* Build configuration list for PBXNativeTarget "Metal 实时预览相机Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B66BADA122DAC78C00B2F750 /* Debug */,
+				B66BADA222DAC78C00B2F750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B66BADA322DAC78C00B2F750 /* Build configuration list for PBXNativeTarget "Metal 实时预览相机UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B66BADA422DAC78C00B2F750 /* Debug */,
+				B66BADA522DAC78C00B2F750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B66BAD6922DAC78800B2F750 /* Project object */;
+}
