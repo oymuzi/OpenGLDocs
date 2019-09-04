@@ -27,6 +27,8 @@
 		B616894A22C512040074DD20 /* FragmentShaderSplit6.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B616894922C512040074DD20 /* FragmentShaderSplit6.fsh */; };
 		B616894D22C514BE0074DD20 /* VertexShaderSplit9.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B616894C22C514BE0074DD20 /* VertexShaderSplit9.vsh */; };
 		B616894F22C514D40074DD20 /* FragmentShaderSplit9.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B616894E22C514D40074DD20 /* FragmentShaderSplit9.fsh */; };
+		B6C6A3D0231E42D00035FFB0 /* VertexShaderSplit3.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B6C6A3CF231E42D00035FFB0 /* VertexShaderSplit3.vsh */; };
+		B6C6A3D2231E42E30035FFB0 /* FragmentShaderSplit3.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B6C6A3D1231E42E30035FFB0 /* FragmentShaderSplit3.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		B616894922C512040074DD20 /* FragmentShaderSplit6.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderSplit6.fsh; sourceTree = "<group>"; };
 		B616894C22C514BE0074DD20 /* VertexShaderSplit9.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderSplit9.vsh; sourceTree = "<group>"; };
 		B616894E22C514D40074DD20 /* FragmentShaderSplit9.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderSplit9.fsh; sourceTree = "<group>"; };
+		B6C6A3CF231E42D00035FFB0 /* VertexShaderSplit3.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderSplit3.vsh; sourceTree = "<group>"; };
+		B6C6A3D1231E42E30035FFB0 /* FragmentShaderSplit3.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderSplit3.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 		B61688F622C3B7B90074DD20 /* OpenGL ES 滤镜入门 */ = {
 			isa = PBXGroup;
 			children = (
+				B6C6A3CE231E425E0035FFB0 /* Split3 */,
 				B616894B22C5148A0074DD20 /* Split9 */,
 				B616894622C511D30074DD20 /* Split6 */,
 				B616894122C5100B0074DD20 /* Split4 */,
@@ -202,6 +207,15 @@
 				B616894E22C514D40074DD20 /* FragmentShaderSplit9.fsh */,
 			);
 			path = Split9;
+			sourceTree = "<group>";
+		};
+		B6C6A3CE231E425E0035FFB0 /* Split3 */ = {
+			isa = PBXGroup;
+			children = (
+				B6C6A3CF231E42D00035FFB0 /* VertexShaderSplit3.vsh */,
+				B6C6A3D1231E42E30035FFB0 /* FragmentShaderSplit3.fsh */,
+			);
+			path = Split3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B616894A22C512040074DD20 /* FragmentShaderSplit6.fsh in Resources */,
+				B6C6A3D2231E42E30035FFB0 /* FragmentShaderSplit3.fsh in Resources */,
 				B616894F22C514D40074DD20 /* FragmentShaderSplit9.fsh in Resources */,
 				B616894022C509620074DD20 /* FragmentShaderSplit2.fsh in Resources */,
 				B616894822C511EE0074DD20 /* VertexShaderSplit6.vsh in Resources */,
@@ -319,6 +334,7 @@
 				B616893722C4FC150074DD20 /* VertexShaderNormal.vsh in Resources */,
 				B61688FD22C3B7B90074DD20 /* Main.storyboard in Resources */,
 				B616894D22C514BE0074DD20 /* VertexShaderSplit9.vsh in Resources */,
+				B6C6A3D0231E42D00035FFB0 /* VertexShaderSplit3.vsh in Resources */,
 				B616892822C3CC6F0074DD20 /* timor.jpg in Resources */,
 				B616894322C5102F0074DD20 /* VertexShaderSplit4.vsh in Resources */,
 				B616893E22C509500074DD20 /* VertexShaderSplit2.vsh in Resources */,

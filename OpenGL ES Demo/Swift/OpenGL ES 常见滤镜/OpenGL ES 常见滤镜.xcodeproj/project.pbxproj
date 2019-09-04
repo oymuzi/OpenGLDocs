@@ -18,7 +18,6 @@
 		B642514522C7664E00BB5965 /* FragmentShaderBlackWhite.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B642514422C7664E00BB5965 /* FragmentShaderBlackWhite.fsh */; };
 		B642514722C7669100BB5965 /* OMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642514622C7669100BB5965 /* OMView.swift */; };
 		B642514922C766AE00BB5965 /* OMFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642514822C766AE00BB5965 /* OMFilterView.swift */; };
-		B642514B22C76D0700BB5965 /* cute.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B642514A22C76D0700BB5965 /* cute.jpg */; };
 		B642514E22C76D8B00BB5965 /* VertexShaderNormal.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B642514D22C76D8B00BB5965 /* VertexShaderNormal.vsh */; };
 		B642515022C76D9A00BB5965 /* FragmentShaderNormal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B642514F22C76D9A00BB5965 /* FragmentShaderNormal.fsh */; };
 		B642515322C8909000BB5965 /* VertexShaderReverse.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B642515222C8909000BB5965 /* VertexShaderReverse.vsh */; };
@@ -31,6 +30,7 @@
 		B642516422C8BC0500BB5965 /* FragmentShaderMosaic2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B642516322C8BC0500BB5965 /* FragmentShaderMosaic2.fsh */; };
 		B651AE1822CB8D1500D0CE43 /* VertexShaderMosaic3.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B651AE1722CB8D1500D0CE43 /* VertexShaderMosaic3.vsh */; };
 		B651AE1A22CB8D2300D0CE43 /* FragmentShaderMosaic3.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B651AE1922CB8D2300D0CE43 /* FragmentShaderMosaic3.fsh */; };
+		B6C6A3D4231E4CD80035FFB0 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6C6A3D3231E4CD80035FFB0 /* girl.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,6 @@
 		B642514422C7664E00BB5965 /* FragmentShaderBlackWhite.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderBlackWhite.fsh; sourceTree = "<group>"; };
 		B642514622C7669100BB5965 /* OMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMView.swift; sourceTree = "<group>"; };
 		B642514822C766AE00BB5965 /* OMFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMFilterView.swift; sourceTree = "<group>"; };
-		B642514A22C76D0700BB5965 /* cute.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute.jpg; sourceTree = "<group>"; };
 		B642514D22C76D8B00BB5965 /* VertexShaderNormal.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderNormal.vsh; sourceTree = "<group>"; };
 		B642514F22C76D9A00BB5965 /* FragmentShaderNormal.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderNormal.fsh; sourceTree = "<group>"; };
 		B642515222C8909000BB5965 /* VertexShaderReverse.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderReverse.vsh; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		B642516322C8BC0500BB5965 /* FragmentShaderMosaic2.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderMosaic2.fsh; sourceTree = "<group>"; };
 		B651AE1722CB8D1500D0CE43 /* VertexShaderMosaic3.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShaderMosaic3.vsh; sourceTree = "<group>"; };
 		B651AE1922CB8D2300D0CE43 /* FragmentShaderMosaic3.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShaderMosaic3.fsh; sourceTree = "<group>"; };
+		B6C6A3D3231E4CD80035FFB0 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +140,7 @@
 				B642513F22C7659200BB5965 /* BlackWhite */,
 				B642511122C7656800BB5965 /* AppDelegate.swift */,
 				B642511322C7656800BB5965 /* ViewController.swift */,
-				B642514A22C76D0700BB5965 /* cute.jpg */,
+				B6C6A3D3231E4CD80035FFB0 /* girl.jpg */,
 				B642511522C7656800BB5965 /* Main.storyboard */,
 				B642511822C7657B00BB5965 /* Assets.xcassets */,
 				B642511A22C7657B00BB5965 /* LaunchScreen.storyboard */,
@@ -296,7 +296,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = oymuzi;
+				ORGANIZATIONNAME = "欧阳林";
 				TargetAttributes = {
 					B642510D22C7656800BB5965 = {
 						CreatedOnToolsVersion = 10.1;
@@ -343,6 +343,7 @@
 				B642515D22C8B2D100BB5965 /* VertexShaderMosaic.vsh in Resources */,
 				B642515822C8923000BB5965 /* VertexShaderVotex.vsh in Resources */,
 				B651AE1A22CB8D2300D0CE43 /* FragmentShaderMosaic3.fsh in Resources */,
+				B6C6A3D4231E4CD80035FFB0 /* girl.jpg in Resources */,
 				B642514122C765EF00BB5965 /* VertexShaderBlackWhite.vsh in Resources */,
 				B642514E22C76D8B00BB5965 /* VertexShaderNormal.vsh in Resources */,
 				B651AE1822CB8D1500D0CE43 /* VertexShaderMosaic3.vsh in Resources */,
@@ -351,7 +352,6 @@
 				B642511C22C7657B00BB5965 /* LaunchScreen.storyboard in Resources */,
 				B642511922C7657B00BB5965 /* Assets.xcassets in Resources */,
 				B642515522C890A100BB5965 /* FragmentShaderReverse.fsh in Resources */,
-				B642514B22C76D0700BB5965 /* cute.jpg in Resources */,
 				B642511722C7656800BB5965 /* Main.storyboard in Resources */,
 				B642515A22C8923D00BB5965 /* FragmentShaderVotex.fsh in Resources */,
 			);

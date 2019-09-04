@@ -5,12 +5,12 @@ uniform sampler2D sampler;
 
 const float PI = 3.1415926;
 const float angle = 80.0;
-const float radius = 0.3;
+const float radius = 0.5;
 
 void main(){
     
     // 旋转正方形范围
-    vec2 rectSize = vec2(0.5, 0.5);
+    vec2 rectSize = vec2(0.2, 0.2);
     // 旋转区域的内切圆直径
     float votexDiameter = rectSize.s;
     // 纹理坐标

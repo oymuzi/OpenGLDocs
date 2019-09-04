@@ -19,6 +19,10 @@ struct OMVertex {
 
 class OMView: UIView {
     
+    private var displayLink: CADisplayLink?
+    private var startTimeinterval: TimeInterval = 0
+    private var vertexBuffer: GLuint = 0
+    
     private var myContext: EAGLContext!
     private var myLayer: CAEAGLLayer!
     private var myProgram: GLuint = 0
@@ -39,8 +43,15 @@ class OMView: UIView {
     }
     
     
-    public func changeProgramWithName(_ name: String){
+    public func changeProgramWithName(_ name: String, needTime: Bool){
         self.programName = name
+        if needTime {
+            self.startAnimationFilter()
+        } else {
+            self.displayLink?.invalidate()
+            self.displayLink = nil
+            self.startTimeinterval = 0
+        }
         self.layoutSubviews()
     }
     
@@ -150,6 +161,7 @@ class OMView: UIView {
         glGenBuffers(1, &vertexBuffer)
         glBindBuffer(GLenum(GL_ARRAY_BUFFER), vertexBuffer)
         glBufferData(GLenum(GL_ARRAY_BUFFER), MemoryLayout<OMVertex>.size * vertexArray.count, vertexArray, GLenum(GL_DYNAMIC_DRAW))
+        self.vertexBuffer = vertexBuffer
         
         let position: GLuint = GLuint(glGetAttribLocation(self.myProgram, "position"))
         glEnableVertexAttribArray(position)
@@ -159,7 +171,7 @@ class OMView: UIView {
         glEnableVertexAttribArray(texture)
         glVertexAttribPointer(texture, 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(MemoryLayout<OMVertex>.size), UnsafeRawPointer(bitPattern: MemoryLayout<GLfloat>.size * 3))
         
-        self.loadTextureWith(name: "cute", type: "jpg")
+        self.loadTextureWith(name: "girl", type: "jpg")
         
         
     }
@@ -216,6 +228,34 @@ class OMView: UIView {
         shader = glCreateShader(shaderType)
         glShaderSource(shader, 1, &shaderSource, nil)
         glCompileShader(shader)
+    }
+    
+    // 开始动画滤镜
+    private func startAnimationFilter() {
+        if self.displayLink != nil {
+            self.displayLink?.invalidate()
+            self.displayLink = nil
+        }
+        self.startTimeinterval = 0
+        self.displayLink = CADisplayLink.init(target: self, selector: #selector(timeAction))
+        self.displayLink?.add(to: RunLoop.current, forMode: .common)
+    }
+    
+    @objc private func timeAction(){
+        if self.startTimeinterval == 0 {
+            self.startTimeinterval = self.displayLink?.timestamp ?? 0
+        }
+        glUseProgram(self.myProgram)
+        glBindBuffer(GLenum(GL_ARRAY_BUFFER), self.vertexBuffer)
+        let currentTime = self.displayLink!.timestamp - self.startTimeinterval
+        let name = UnsafePointer<GLchar>(("time" as NSString).utf8String!)
+        let time: GLuint = GLuint(glGetUniformLocation(self.myProgram, name))
+        glUniform1f(GLint(time), GLfloat(currentTime))
+        
+        glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
+        glClearColor(1.0, 1.0, 1.0, 1.0)
+        glDrawArrays(GLenum(GL_TRIANGLES), 0, 6);
+        self.myContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
     }
     
 }
